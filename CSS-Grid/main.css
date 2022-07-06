@@ -1,10 +1,15 @@
 .container {
-    margin: 20px;
     display: grid;
+    margin: 20px;
     height: 500px;
-    grid-template-columns: repeat(4, 25%);
+    /*grid-template-columns: repeat(4, 25%);*/
+    /*defining column line names that will be repeated and automate their name creation*/
+    grid-template-columns: [hd-start] repeat(4, [col-start] 25% [col-end]) [hd-end];
     /*grid-template-rows: 5rem minmax(10px, 200px);*/
-    grid-template-rows: [row-1-start] 5rem [row-1-end row-2-start] minmax(10px, auto) 
+    /*grid-template-rows: [row-1-start] 5rem [row-1-end row-2-start] minmax(10px, auto) 
+    [row-2-end row-3-start] 100px [row-3-end];*/
+    /*hd-start; hd-header, because word header we are using below*/
+    grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(10px, auto) 
     [row-2-end row-3-start] 100px [row-3-end];
     /*grid-column-gap: 20px;
     grid-row-gap: 10px;*/
@@ -17,6 +22,8 @@
 
 .el1 {  
     background: rgba(255, 154, 72, 0.5);
+    /*we targeting here automatically generated line names*/
+    grid-column: col-start 2 / col-end 2;
 }
 
 .el2 {
@@ -38,7 +45,7 @@
     grid-row-start: row-1-start;
     grid-row-end: row-2-end;*/
     /*grid-area: row-1-start / 2 / row-2-end / span 3;*/
-    grid-area: header;
+    grid-area: hd;
 }
 
 .el4 {
