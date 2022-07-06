@@ -1,2 +1,2 @@
-# My_Learning_Templates
+# My-Learning-Templates
 Templates that I'm using during educational process.
