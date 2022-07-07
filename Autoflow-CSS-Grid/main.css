@@ -2,8 +2,11 @@
     margin: 20px;
     display: grid;
     /*"dynamic grid, only columns or rows assigned"*/
-    /*we defined 2 columns and  1 row manually other will be auto*/
-    grid-template-columns: repeat(2, 15rem);
+    /*we defined 2 columns and 1 row manually, other will be auto*/
+    /*grid-template-columns: repeat(2, 15rem); static size of grid elements*/
+    /*grid-template-columns: repeat(auto-fill, 15rem);*/
+    /*if have less items better to use */
+    grid-template-columns: repeat(auto-fill, 15rem);
     grid-template-rows: 20rem; /*we assigned 1st row, other will be auto
     we set it below*/
     justify-content: center;
@@ -19,7 +22,7 @@
     newly added columns___can be fixed or auto(default)
     in our case: 5rem, this value make sense if grid-auto-flow: column
     im our case it overwritten by explicitly set columns*/
-    grid-auto-columns: 5rem; /*?can be commented? because aiuto-flow:row*/
+    /*grid-auto-columns: 5rem; /*?can be commented? because aiuto-flow:row*/
 }
 
 .quote {
