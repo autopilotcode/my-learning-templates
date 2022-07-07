@@ -6,7 +6,7 @@
     /*grid-template-columns: repeat(2, 15rem); static size of grid elements*/
     /*grid-template-columns: repeat(auto-fill, 15rem);*/
     /*if have less items better to use */
-    grid-template-columns: repeat(auto-fill, 15rem);
+    grid-template-columns: repeat(3, 15rem);
     grid-template-rows: 20rem; /*we assigned 1st row, other will be auto
     we set it below*/
     justify-content: center;
@@ -17,7 +17,7 @@
     in our case: min 8rem and max auto*/
     grid-auto-rows: minmax(8rem, auto);
     /*allows to define where new elements should be added*/
-    grid-auto-flow: row;
+    grid-auto-flow: row dense;
     /*allows to fo define the size of the
     newly added columns___can be fixed or auto(default)
     in our case: 5rem, this value make sense if grid-auto-flow: column
@@ -31,6 +31,11 @@
   font-family: sans-serif;
   padding: 1rem;
   border-radius: 5px;
+}
+
+/*first element after the feature quote*/
+.quote:nth-of-type(2) {
+  grid-column: span 2;
 }
 
 .quote--featured {
