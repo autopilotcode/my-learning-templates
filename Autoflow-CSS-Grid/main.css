@@ -1,9 +1,13 @@
 .container {
     margin: 20px;
     display: grid;
+    /*"dynamic grid, only columns assigned"*/
     grid-template-columns: repeat(2, 15rem);
     justify-content: center;
     grid-gap: 1.5rem;
+    /*allows to fo define the size of the
+    newly added rows___can be fixed or auto(default)
+    in our case: min 8rem and max auto*/
     grid-auto-rows: minmax(8rem, auto);
     grid-auto-flow: row;
     grid-auto-columns: 5rem;
