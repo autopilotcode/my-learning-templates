@@ -1,13 +1,32 @@
 .container {
+    transform: rotateY(130deg);
+    transform-style: preserve-3d;
+    position: relative;
     margin: 150px auto;
     border: 1px solid black;
     width: 200px;
     height: 200px;
+    perspective: 1000px;
+    perspective-origin: 500px /*left right etc.*/;
 }
 
-.box {
-   
+.box1 {
+    position: absolute;
+    z-index: 1;
+    transform: /*perspective(1000px)*/ rotateY(80deg);
+    backface-visibility: hidden;
     background: red;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.box2 {
+    position: absolute;
+    transform: translateZ(-10rem);
+    background: blue;
     width: 100%;
     height: 100%;
     color: white;
