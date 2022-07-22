@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <picture>
+    <!--if it supports webp - will be webp, otherwise - png-->
+    <source media="(min-width: 600px)"   
+            srcset="https://source.unsplash.com/600x600.webp?cow 1x,
+                    https://source.unsplash.com/1200x1200.webp?cow 2x"
+                    type="image/webp"
+    >
+    <source media="(min-width: 600px)"   
+            srcset="https://source.unsplash.com/600x600.png?cow 1x,
+                    https://source.unsplash.com/1200x1200.png?cow 2x"
+                    type="image/png"
+    >
+    <source srcset="https://source.unsplash.com/300x300.webp?cow 1x,
+                    https://source.unsplash.com/600x600.webp?cow 2x"
+                    type="image/webp"
+    >
+    <source srcset="https://source.unsplash.com/300x300.webp?cow 1x,
+                    https://source.unsplash.com/600x600.webp?cow 2x"
+                    type="image/webp"
+    >
+    <img src="https://source.unsplash.com/600x600.png?cow" alt="some random cow">
+  </picture>
+</body>
+</html>
