@@ -56,10 +56,10 @@
 
 .el3 {
     background: rgba(0, 128, 0, 0.5);
-    /*grid-column-start: 2;
-    grid-column-end: span 3;
-    grid-row-start: row-1-start;
-    grid-row-end: row-2-end;*/
+    /*grid-column-start: 2;*/
+    /* grid-column-end: span 3; */
+    /* grid-row-start: row-1-start; */
+    /* grid-row-end: row-2-end; */
     /*grid-area: row-1-start / 2 / row-2-end / span 3;*/
     grid-area: hd;
 }
