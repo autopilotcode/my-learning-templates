@@ -5,6 +5,12 @@ function startGame() {
 
 }
 
-//startGame();  direct execution
+const person = {
+    greet: function greet() {
+        console.log('Hello there!');
+    }
+};      //functions can be stored in an object
 
-startGameBtn.addEventListener('click', startGame);
+//startGame();  direct execution
+startGameBtn.addEventListener('click', startGame);   //indirect execution
+ 
