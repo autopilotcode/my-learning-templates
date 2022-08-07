@@ -5,4 +5,6 @@ function startGame() {
 
 }
 
-startGame();
+//startGame();  direct execution
+
+startGameBtn.addEventListener('click', startGame);
