@@ -5,12 +5,14 @@ function startGame() {
 
 }
 
-const person = {
-    greet: function greet() {
-        console.log('Hello there!');
-    }
-};      //functions can be stored in an object
+// const person = {
+//     greet: function greet() {
+//         console.log('Hello there!');
+//     }
+// };                                                          //functions can be stored in an object
 
-//startGame();  direct execution
-startGameBtn.addEventListener('click', startGame);   //indirect execution
+// person.greet();
+
+//                                                               //startGame();  direct execution
+// startGameBtn.addEventListener('click', startGame);                            //indirect execution
  
