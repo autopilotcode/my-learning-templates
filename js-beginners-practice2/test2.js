@@ -1,8 +1,8 @@
-const testBigIntInput = prompt('Input bigInt', );
+const testBigIntInput = prompt('Input bigInt', '');
 
 testBigInt = +testBigIntInput;
 
-if (typeof(testBigInt) == 'number') {
-    console.log('It works!');
-}
+
+    console.log(typeof(testBigInt));
+
 
