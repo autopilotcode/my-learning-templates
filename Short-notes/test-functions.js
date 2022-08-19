@@ -1,20 +1,25 @@
-const c = 1300;
+const c = Math.random();
 
-function first(a1, a2) {
+
+let a1 = +(prompt("Input value a1:  ", ""));
+let a2 = +(prompt("Input value a2:  ", ""));
+let b1 = +(prompt("Input value b1:  ", ""));
+let b2 = +(prompt("Input value b2:  ", ""));
+
+function first() {
   return a1 + a2;
 }
 
-function second(b1, b2) {
+function second() {
   return b1 + b2;
 }
 //will read global values instead of argument
 function summary() {
   return asum + bsum + c;
 }
-//run each fucntion
-let asum = first(5, 5);
-let bsum = second(10, 10);
+//run each function
+let asum = first();
+let bsum = second();
 let finalSum = summary();
-let answer = `${asum} + ${bsum} + ${c}`;
 
-alert(finalSum + " - the final summ of three actions: " + answer);
+alert(finalSum + " - the final sum of three actions. Random number was: " + c);

@@ -23,7 +23,7 @@ console.dir(array1[3]);
 function consoleClear() {
     console.clear();
     console.log('To start from the beginning - update the page.' +
-            '\nMake your choice!');
+            '\n\"Make your choice!\"');
 }
 
 let dateConfirm = confirm(`Do you confirm that now is ${var1}`); //if OK is pressed, returns true
