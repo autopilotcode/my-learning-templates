@@ -1,18 +1,19 @@
 alert('Welcome to deposit calculator!' + 
 '\nTap OK to start immediately!');
 
+
+
 let moneyAmount = parseFloat(prompt('Input amount of money, that you want to invest,' +
 ' it should be more or equal 1000$ (don\'t use $ sign, type only a number):', ''));
-while (!moneyAmount === true || moneyAmount < 1000) {
+while (Boolean(moneyAmount) === false || moneyAmount < 1000) {
   alert('Invalid input data, tap OK and try again.');
   moneyAmount = parseFloat(prompt('Input CORRECT initial amount, that you want to invest,' +
   ' it should be more or equal 1000 (don\'t use $ sign, type only a number):', ''));
 }
 
-
 let depositYears = Math.round(prompt('Input desired investment period in years.' + 
 ' It should be an integer, one year or more (float number will be rounded):', ''));
-while (!depositYears === true|| depositYears < 1) {
+while (!!depositYears === false|| depositYears < 1) {
   alert('Invalid input data, tap OK and try again.');
   depositYears = Math.round(prompt('Input CORRECT investment period in years.' +
   ' It should be an integer, one year or more (float number will be rounded):', ''));
