@@ -1,14 +1,17 @@
 alert('Welcome to deposit calculator!' + 
 '\nTap OK to start immediately!');
 
-
+const recomInvestSum = 1000;
+const percentage = 100;
+const recomPercentage = percentage;
+const floatNumber = 2;
 
 let moneyAmount = parseFloat(prompt('Input amount of money, that you want to invest,' +
-' it should be more or equal 1000$ (don\'t use $ sign, type only a number):', ''));
-while (Boolean(moneyAmount) === false || moneyAmount < 1000) {
+` it should be more or equal ${recomInvestSum}$ (don't use $ sign, type only a number):`, ''));
+while (Boolean(moneyAmount) === false || moneyAmount < recomInvestSum) {
   alert('Invalid input data, tap OK and try again.');
   moneyAmount = parseFloat(prompt('Input CORRECT initial amount, that you want to invest,' +
-  ' it should be more or equal 1000 (don\'t use $ sign, type only a number):', ''));
+  ` it should be more or equal ${recomInvestSum}$ (don't use $ sign, type only a number):`, ''));
 }
 
 let depositYears = Math.round(prompt('Input desired investment period in years.' + 
@@ -20,20 +23,20 @@ while (!!depositYears === false|| depositYears < 1) {
 }
 
 let percentageYear = parseFloat(prompt('Input percentage for your deposit per year,' +
-' it should be not more than 100% (don\'t use % sign, type only a number):', ''));
-while (!percentageYear === true || percentageYear > 100) {
+` it should be not more than ${recomPercentage}% (don't use % sign, type only a number):`, ''));
+while (!percentageYear === true || percentageYear > recomPercentage) {
   alert('Invalid input data, tap OK and try again.');
   percentageYear = parseFloat(prompt('Input CORRECT percentage for your deposit per year,' +
-  ' it should be not more than 100% (don\'t use % sign, type only a number):', ''));
+  ` it should be not more than ${recomPercentage}% (don't use % sign, type only a number):`, ''));
 }
 
 let totalAmount = moneyAmount;
 for (let i = 0; i < depositYears; i++) {
-  totalAmount = (totalAmount * (1 + percentageYear / 100)).toFixed(2);
+  totalAmount = (totalAmount * (1 + percentageYear / percentage)).toFixed(floatNumber);
 }
 
 let totalProfit;
-totalProfit = (totalAmount - moneyAmount).toFixed(2);
+totalProfit = (totalAmount - moneyAmount).toFixed(floatNumber);
 
 //here was used two types of writing output (string + variable), just for a test purpose.
 alert(
