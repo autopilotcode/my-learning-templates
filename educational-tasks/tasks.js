@@ -34,4 +34,17 @@ const isBigger = (a,b) => {
 
 console.log(isBigger(5, -1));
 
+// Task #3
+// Write a function - storeNames
+// It should accept an arbitrary number of strings and return an array of that strings
+// For example:
+// storeNames('Tommy Shelby', 'Ragnar Lodbrok', 'Tom Hardy')
+// // => ['Tommy Shelby', 'Ragnar Lodbrok', 'Tom Hardy']
 
+//pseudo array arguments - read
+
+const storeNames = (...array) => {
+    return array;
+}
+
+console.log(storeNames('Tommy Shelby', 'Ragnar Lodbrok', 'Tom Hardy', 'Sex Pistols'));
