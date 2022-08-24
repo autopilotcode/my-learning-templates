@@ -48,3 +48,49 @@ const storeNames = (...array) => {
 }
 
 console.log(storeNames('Tommy Shelby', 'Ragnar Lodbrok', 'Tom Hardy', 'Sex Pistols'));
+
+
+//my variant
+// function storeNames(...array) {
+//   return array;
+// }
+
+// function storeNames() {
+//     return [...arguments]; ///available in non arrow f
+// }
+
+// function storeNames() {
+//     return Array.from(arguments);
+// }
+
+// function storeNames() {
+//     return arguments;   //not work
+// }
+
+// console.log(storeNames('Tommy Shelby', 'Ragnar Lodbrok', 'Tom Hardy');
+// console.log(typeof storeNames('Tommy Shelby', 'Ragnar Lodbrok', 'Tom Hardy'));
+// console.log(Array.isArray(storeNames('Tommy Shelby', 'Ragnar Lodbrok', 'Tom Hardy')));
+
+
+
+
+
+// Task #4
+// Write a function - getDifference
+// It should accept two arguments as numbers and return their difference. But the function never
+// returns a negative value. If second parameter is greater than first one, function will change their
+// order.
+// For example:
+// getDifference(5, 3) // => 2
+// getDifference(5, 8) // => 3
+
+const getDifference = (a,b) => {
+    if (a >= b) {
+        return a - b;
+    } else {
+        return b - a;
+    }
+}
+
+console.log(getDifference(5, 3));
+console.log(getDifference(5, 8));
