@@ -94,3 +94,26 @@ const getDifference = (a,b) => {
 
 console.log(getDifference(5, 3));
 console.log(getDifference(5, 8));
+
+
+// Task #5
+// Write a function - negativeCount
+// It should accept an array of numbers and return the count of negative values from the array.
+// For example:
+// negativeCount([4, 3, 2, 9])
+// // => 0
+// negativeCount([0, -3, 5, 7]) // => 1
+
+const negativeCount = (numberArray) => {
+    const finalArray = [];
+    for (const el of numberArray) {
+        if (el < 0) {
+            finalArray.push(el);
+        }
+    }
+    return finalArray.length;
+}
+
+console.log(negativeCount([4, 3, 2, 9]));
+console.log(negativeCount([0, -3, -5, 7]));
+
