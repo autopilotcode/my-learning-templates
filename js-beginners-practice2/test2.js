@@ -34,7 +34,7 @@
     obj3.key2 = 'second';
     console.log(obj3);
     
-    console.log('-----------------');
+    console.log('1-----------------');
     
     const arr3 = ['Audi', 'BMW', 'Opel'];
     arr3.push('ZAZ');
@@ -42,17 +42,45 @@
     arr3[1] = 'Polo';
     console.log(arr3);
     
-    console.log('-----------------');
+    console.log('2-----------------');
     
     function func1() {
         return 'It works.';
     }
     
     console.log(func1());
-    console.log('-----------------');
+    console.log('3-----------------');
 
 let a = b = 0;
 let c = a++;
 let d = ++b;
 console.log(`a++ = ${c}`);
 console.log(`++a = ${d}`);
+
+console.log('4-----------------');
+
+console.log(17 % 3 === 2); //true
+console.log(17 % 3 !== 2); //false
+
+const x = '8732648234';
+console.log(typeof +x); //number
+
+console.log('5-----------------');
+
+const string1 = 'Some';
+console.log(string1 + ' string');
+console.log(`${string1} 
+string
+new row`);
+
+console.log('6-----------------');
+const age1 = 11;
+const checkAge1 = age1 >= 18 ? 'adult' : 'minor';
+console.log(checkAge1);
+
+const age2 = 65;
+const checkAge2 = age2 >= 18 ? 'adult' : 'minor';
+console.log(checkAge2);
+console.log(typeof age2);
+
+console.log('7-----------------');
