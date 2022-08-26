@@ -1,9 +1,9 @@
-const testBigIntInput = prompt('Input bigInt', '');
+// const testBigIntInput = prompt('Input bigInt', '');
 
-testBigInt = +testBigIntInput;
+// testBigInt = +testBigIntInput;
 
 
-    console.log(typeof(testBigInt));
+//     console.log(typeof(testBigInt));
 
     const obj1 = {};
     obj1.key1 = 'true';
@@ -49,5 +49,10 @@ testBigInt = +testBigIntInput;
     }
     
     console.log(func1());
+    console.log('-----------------');
 
-
+let a = b = 0;
+let c = a++;
+let d = ++b;
+console.log(`a++ = ${c}`);
+console.log(`++a = ${d}`);
