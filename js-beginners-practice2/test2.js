@@ -182,10 +182,10 @@ arr4 = [1,2,3,4,5,6,7,8];
 console.log(arr4.length);
 //-----------------------------
 
-function generatorItems(...items) {
+const namesGenerator = (...items) => {
     return {
         random: () => items[Math.floor(Math.random() * items.length)],
     };
 }
-const names = generatorItems('John', 'Mary', 'Alice', 'Gary');
+const names = namesGenerator('John', 'Mary', 'Alice', 'Gary');
 console.log(names.random());
