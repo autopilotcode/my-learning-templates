@@ -91,9 +91,22 @@ const arrow1 = (() => console.log('Self calling function'))();
 const arrow2 = () => console.log('Arrow func called with const');
 arrow2();
 
-console.log('8-----------------');
+console.log('8-----------------SPREAD');
 
 const firstArray = [1,2,3];
 const secondArray = [4,5,6];
 const merged = [firstArray, secondArray];
 console.log(merged);
+
+const firstArray1 = [1,2,3];
+const secondArray1 = [4,5,6];
+const merged1 = [...firstArray1, ...secondArray1];
+console.log(merged1);
+
+//the copy (not a reference)
+
+const user = {id: 1, firstName: 'Alice', lastName: 'Brown'};
+const userCopy = {...user, lastName: 'NewBrown'};
+userCopy.new = 'Added element';
+console.log('user object', user);
+console.log('Manually changed userCopy object\n', userCopy);
