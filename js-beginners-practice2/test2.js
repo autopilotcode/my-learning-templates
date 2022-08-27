@@ -91,6 +91,8 @@ const arrow1 = (() => console.log('Self calling function'))();
 const arrow2 = () => console.log('Arrow func called with const');
 arrow2();
 
+
+
 console.log('8-----------------SPREAD');
 
 const firstArray = [1,2,3];
@@ -110,3 +112,40 @@ const userCopy = {...user, lastName: 'NewBrown'};
 userCopy.new = 'Added element';
 console.log('user object', user);
 console.log('Manually changed userCopy object\n', userCopy);
+
+//----
+function sum(x,y,z) {
+    return x + y + z ;
+}
+
+const numberArray = [1,2,3];
+
+console.log(sum(numberArray)); //will use array as the 'X' argument
+console.log(sum(...numberArray));//unpack array and use it as arguments for sum(x,y,z)
+
+
+console.log('9-----------------REST');
+
+a = 345;
+b = 987;
+const [fistLetter, secondLetter] = [a, b, c, d];
+console.log(fistLetter, secondLetter);//345 987
+
+const [first, second, ...remaining] = [1,2,3,4,5,6,7];
+console.log(first, second, remaining);//1 2 [ 3, 4, 5, 6, 7 ]
+//---
+const userObj1 = {
+    id: 777,
+    firstName: 'Alice',
+    lastName: 'Brown',
+    email: 'alicebrown@email.com'
+}
+//to record  to const id, value from 'id' key from userObj1
+const { id } = userObj1; //
+console.log(id);
+///777
+
+//to record to a few const's a few values from keys of userObj1
+const {firstName, lastName, ...data} = userObj1;
+console.log(firstName, lastName, data);
+//Alice Brown { id: 777, email: 'alicebrown@email.com' }
