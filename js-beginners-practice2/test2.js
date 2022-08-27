@@ -160,3 +160,20 @@ const printName = (firstName, lastName = 'Default') => {
 printName('John');
 printName('John', 'ManualLastName');
 printName('John', undefined);
+
+console.log('11---VALUE ASSIGNMENT AND MUTATION');
+
+const setAge = (user, age) => {
+    user.age = age;
+    user = {name: 'Alice', age: 40};
+}
+
+const userBob = {
+    name: 'Bob',
+    age: 30
+}
+
+setAge(userBob, 31); 
+console.log(userBob); //{ name: 'Bob', age: 31 }
+
+console.log('11------------------');
