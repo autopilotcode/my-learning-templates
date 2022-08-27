@@ -149,3 +149,14 @@ console.log(id);
 const {firstName, lastName, ...data} = userObj1;
 console.log(firstName, lastName, data);
 //Alice Brown { id: 777, email: 'alicebrown@email.com' }
+
+
+console.log('10-------DEFAULT ARGUMENTS');
+
+const printName = (firstName, lastName = 'Default') => {
+    console.log(firstName, lastName);
+} 
+
+printName('John');
+printName('John', 'ManualLastName');
+printName('John', undefined);
