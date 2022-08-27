@@ -78,6 +78,8 @@ const age1 = 11;
 const checkAge1 = age1 >= 18 ? 'adult' : 'minor';
 console.log(checkAge1);
 
+
+//ternary operator
 const age2 = 65;
 const checkAge2 = age2 >= 18 ? 'adult' : 'minor';
 console.log(checkAge2);
@@ -88,3 +90,10 @@ console.log('7-----------------');
 const arrow1 = (() => console.log('Self calling function'))();
 const arrow2 = () => console.log('Arrow func called with const');
 arrow2();
+
+console.log('8-----------------');
+
+const firstArray = [1,2,3];
+const secondArray = [4,5,6];
+const merged = [firstArray, secondArray];
+console.log(merged);
