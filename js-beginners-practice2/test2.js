@@ -187,5 +187,13 @@ const namesGenerator = (...items) => {
         random: () => items[Math.floor(Math.random() * items.length)],
     };
 }
-const names = namesGenerator('John', 'Mary', 'Alice', 'Gary');
-console.log(names.random());
+const names = namesGenerator('John', 'Mary', 'Alice', 'Gary', 'Peter', 'Daniel');
+console.log(names.random() + ' - random name 1');
+
+//second variant without object
+
+const namesGenerator2 = (...items) => {
+    return () => items[Math.floor(Math.random() * items.length)]
+}
+const names2 = namesGenerator2('John', 'Mary', 'Alice', 'Gary', 'Peter', 'Daniel');
+console.log(names2() + ' - random name 2');
