@@ -84,3 +84,7 @@ console.log(checkAge2);
 console.log(typeof age2);
 
 console.log('7-----------------');
+
+const arrow1 = (() => console.log('Self calling function'))();
+const arrow2 = () => console.log('Arrow func called with const');
+arrow2();
