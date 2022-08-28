@@ -16,7 +16,7 @@ const isEquals = (a,b) => {
     return a === b;
 }
 
-console.log(isEquals(3, 3));
+console.log('a === b:', isEquals(3, 3));
 
 
 // //Task2
@@ -32,7 +32,7 @@ const isBigger = (a,b) => {
     return a > b;
 }
 
-console.log(isBigger(5, -1));
+console.log('a > b:', isBigger(5, -1));
 
 // Task #3
 // Write a function - storeNames
@@ -47,7 +47,7 @@ const storeNames = (...array) => {
     return array;
 }
 
-console.log(storeNames('Tommy Shelby', 'Ragnar Lodbrok', 'Tom Hardy', 'Sex Pistols'));
+console.log('arbitrary number of strings to array is:\n', '>>' + storeNames('Tommy Shelby', 'Ragnar Lodbrok', 'Tom Hardy', 'Sex Pistols'));
 
 
 //my variant
@@ -92,8 +92,8 @@ const getDifference = (a,b) => {
     }
 }
 
-console.log(getDifference(5, 3));
-console.log(getDifference(5, 8));
+console.log('the difference is', getDifference(5, 3));
+console.log('the difference is', getDifference(5, 8));
 
 
 // Task #5
@@ -114,6 +114,32 @@ const negativeCount = (numberArray) => {
     return finalArray.length;
 }
 
-console.log(negativeCount([4, 3, 2, 9]));
-console.log(negativeCount([0, -3, -5, 7]));
+console.log('negative number count', negativeCount([4, 3, 2, 9]));
+console.log('negative number count', negativeCount([0, -3, -5, 7]));
 
+
+// Task #6
+// Write a function – letterCount
+// It accepts two string arguments and returns an integer of the count of occurrences the 2nd
+// argument is found in the first one.
+// If no occurrences can be found, a count of 0 should be returned.
+// For example:
+// letterCount("Marry", "r") // => 2
+// letterCount("Barny", "y") // => 1
+// letterCount("", "z")
+// // => 0
+
+const letterCount = (a,b) => {
+    const arrayFromString = [...a];
+    let letterCount = 0;
+        for (const el of arrayFromString) {
+            if (el === b) {
+                letterCount += 1;
+            }
+        }
+        return letterCount;
+}
+
+
+
+console.log('letterCount', letterCount("Marrrrry", "r"));
