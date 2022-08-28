@@ -65,7 +65,7 @@ console.log(17 % 3 !== 2); //false
 const x = '8732648234';
 console.log(typeof +x); //number
 
-console.log('5-----------------');
+console.log('5----Back ticks support line breaks');
 
 const string1 = 'Some';
 console.log(string1 + ' string');
@@ -73,7 +73,7 @@ console.log(`${string1}
 string
 new row`);
 
-console.log('6-----------------');
+console.log('6--------TERNARY OPERATOR');
 const age1 = 11;
 const checkAge1 = age1 >= 18 ? 'adult' : 'minor';
 console.log(checkAge1);
@@ -85,12 +85,13 @@ const checkAge2 = age2 >= 18 ? 'adult' : 'minor';
 console.log(checkAge2);
 console.log(typeof age2);
 
-console.log('7-----------------');
-
-const arrow1 = (() => console.log('Self calling function'))();
+console.log('7-------ARROW & SELF CALLING ARROW FUNCTION');
+//no curly braces
 const arrow2 = () => console.log('Arrow func called with const');
 arrow2();
 
+//no curly braces & parenthesis in the end
+const arrow1 = (() => console.log('Self calling function'))();
 
 
 console.log('8-----------------SPREAD');
@@ -99,23 +100,27 @@ const firstArray = [1,2,3];
 const secondArray = [4,5,6];
 const merged = [firstArray, secondArray];
 console.log(merged);
+//[ [ 1, 2, 3 ], [ 4, 5, 6 ] ]
 
 const firstArray1 = [1,2,3];
 const secondArray1 = [4,5,6];
 const merged1 = [...firstArray1, ...secondArray1];
 console.log(merged1);
+//[ 1, 2, 3, 4, 5, 6 ]
+//like unpacking
 
 //the copy (not a reference)
 
+//creating new object by copying and changing and adding key/value pair
 const user = {id: 1, firstName: 'Alice', lastName: 'Brown'};
 const userCopy = {...user, lastName: 'NewBrown'};
 userCopy.new = 'Added element';
 console.log('user object', user);
 console.log('Manually changed userCopy object\n', userCopy);
 
-//----
+//unpacking array to function
 function sum(x,y,z) {
-    return x + y + z ;
+    return x + y + z;
 }
 
 const numberArray = [1,2,3];
@@ -176,10 +181,10 @@ const userBob = {
 setAge(userBob, 31); 
 console.log(userBob); //{ name: 'Bob', age: 31 }
 
-console.log('11------------Random Name from array');
+console.log('12------------CLOSURES, Random Name from array');
 
-arr4 = [1,2,3,4,5,6,7,8];
-console.log(arr4.length);
+// arr4 = [1,2,3,4,5,6,7,8];
+// console.log(arr4.length);//8
 //-----------------------------
 
 const namesGenerator = (...items) => {
@@ -197,3 +202,29 @@ const namesGenerator2 = (...items) => {
 }
 const names2 = namesGenerator2('John', 'Mary', 'Alice', 'Gary', 'Peter', 'Daniel');
 console.log(names2() + ' - random name 2');
+
+
+console.log('13-------CLOSURES, COUNTER');
+
+function makeCounter() {
+    let count = 0;
+    return {
+        increment: () => count += 1,
+        decrement: () => count -= 1,
+        getValue:  () => count
+    }
+}
+
+const counter = makeCounter();
+// const counter2 = makeCounter();
+// const counter3 = makeCounter();
+// const counterN = makeCounter(); //each counter separated
+
+console.log(counter.getValue());
+counter.increment();
+counter.increment();
+console.log(counter.getValue());
+
+counter.decrement();
+console.log(counter.getValue());
+
