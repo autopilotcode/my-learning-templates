@@ -126,10 +126,11 @@ function sum(x,y,z) {
 const numberArray = [1,2,3];
 
 console.log(sum(numberArray)); //will use array as the 'X' argument
+//1,2,3undefinedundefined
 console.log(sum(...numberArray));//unpack array and use it as arguments for sum(x,y,z)
+//6
 
-
-console.log('9-----------------REST');
+console.log('9----REST9gather to an array ar an object)');
 
 a = 345;
 b = 987;
@@ -187,6 +188,8 @@ console.log('12------------CLOSURES, Random Name from array');
 // console.log(arr4.length);//8
 //-----------------------------
 
+
+//function return object
 const namesGenerator = (...items) => {
     return {
         random: () => items[Math.floor(Math.random() * items.length)],
@@ -196,7 +199,7 @@ const names = namesGenerator('John', 'Mary', 'Alice', 'Gary', 'Peter', 'Daniel')
 console.log(names.random() + ' - random name 1');
 
 //second variant without object
-
+//function return function
 const namesGenerator2 = (...items) => {
     return () => items[Math.floor(Math.random() * items.length)]
 }
@@ -228,3 +231,4 @@ console.log(counter.getValue());
 counter.decrement();
 console.log(counter.getValue());
 
+console.log('14-------');
