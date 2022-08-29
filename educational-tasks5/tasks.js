@@ -134,7 +134,7 @@ const letterCount = (a,b) => {
     let letterCount = 0;
         for (const el of arrayFromString) {
             if (el === b) {
-                letterCount += 1;
+                ++letterCount;
             }
         }
         return letterCount;
@@ -159,14 +159,15 @@ console.log('letterCount', letterCount("Marrrrry", "r"));
 
 const countPoints = (arrayMatchesResults) => {
     let finalPointsCount = 0;
+    const WIN_POINTS = 3;
     for (const el of arrayMatchesResults) {
         const arrayOneElement = el.split(':');
-        let part1OfScore = +arrayOneElement[0];
-        let part2OfScore = +arrayOneElement[1];
-            if (part1OfScore > part2OfScore) {
-                finalPointsCount += 3;
-            } else if (part1OfScore === part2OfScore) {
-                finalPointsCount += 1;
+        let partOneOfScore = +arrayOneElement[0];
+        let partTwoOfScore = +arrayOneElement[1];
+            if (partOneOfScore > partTwoOfScore) {
+                finalPointsCount += WIN_POINTS;
+            } else if (partOneOfScore === partTwoOfScore) {
+                ++finalPointsCount;
             } else {
                 continue;
             }
