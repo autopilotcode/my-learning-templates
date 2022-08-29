@@ -303,3 +303,71 @@ console.log('Mapped array (el*el) is:', newArr12);
 const arr13 = arr12.map((el, index) => `[${index}]:${el}`); 
 console.log('Initial array is:', arr12);
 console.log('Mapped array `[${index}]:${el}` is:', arr13);
+
+
+
+console.log('14-----array.sort method - modified current array');
+
+const arr14 = [5, 9, 12, 43, 67, 2, 1, 17, 36];
+console.log('Initial array is:', arr14);
+console.log('Sorted array a-b:', arr14.sort((a,b,) => a - b ));
+console.log('Sorted array b-a:', arr14.sort((a,b,) => b - a ));
+
+const arr15 = ['A', 'F', 'B', 'M', 'C', 'Z', 'E'];
+console.log('Initial array is:', arr15);
+console.log('Sorted array:', arr15.sort());
+
+
+console.log(
+    '15-----array.reduce method - return a single value'
+    );
+
+const arr16 = [1, 4, -10, 68, 16, 24, 21, 8, -17];
+console.log('Initial array is:', arr16);
+console.log(
+    'Sum of all numbers:', arr16.reduce((sum,currentNumber) => sum + currentNumber, 100)
+    );
+let value1 = arr16.reduce((sum,currentNumber) => sum - currentNumber, 0);
+console.log('Subtract of all numbers:', value1);
+
+
+const users1 = [
+    {
+        name: 'Alice',
+        job: 'Web developer'
+    },
+    {
+        name: 'Baga',
+        job: 'Fish developer'
+    },
+    {
+        name: 'Poli',
+        job: 'Pull developer'
+    }
+];
+
+console.log(
+    users1.reduce((list, currentUser) => (list +=  `${currentUser.name} `), '')
+);
+
+
+
+console.log('16-----array.find & find index method - return an element');
+
+const arr17 = [1, 4, -10, 68, 16, 24, 21, 8, -17];
+
+console.log(
+    arr17.find((item) => item > 4)
+); //68
+console.log(
+    arr17.find((item) => item < -20)
+); //undefined
+
+console.log(
+    arr17.findIndex((item) => item === 16)
+); //index 4
+console.log(
+    arr17.findIndex((item) => item < -20)
+); //index -1 (maybe not exist0)
+
+
