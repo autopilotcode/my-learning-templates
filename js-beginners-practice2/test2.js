@@ -231,7 +231,11 @@ console.log(counter.getValue());
 counter.decrement();
 console.log(counter.getValue());
 
+
+
 console.log('14-----array.forEach method');
+//creates new array
+
 
 //'el' - arbitrary variable (in each task here, will have different name)
 const arr5 = [1,2,3,4,5];
@@ -242,15 +246,16 @@ arr5.forEach((el) => {
 });
 
 
-console.log('14-----array.filter method');
+console.log('14-----array.filter method - creates new array');
+//creates new array
 
 const arr6 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 console.log("Initial array arr6 is", arr6);
 
-const arr6a = arr6.filter((element1) => {
+const arr6new = arr6.filter((element1) => {
     return element1 % 2 === 0;
 })
-console.log("array arr6a with even elements of arr6 is:", arr6a);
+console.log("array arr6new with even elements of arr6 is:", arr6new);
 
 const arr7 = [-2, -4, -5, 3, 4, 6, -6, 23];
 console.log('Initial array:', arr7)
@@ -284,5 +289,17 @@ console.log(
 
 
 
+console.log('14-----map.filter method - creates new array');
+//creates new array with elements of initial array, processed with function
 
+const arr12 = [2,4,6,8,10,12,14,16];
+console.log('Initial array is:', arr12);
 
+const newArr12 = arr12.map((el) => el*el);
+console.log('Mapped array (el*el) is:', newArr12);
+
+//we are creating array, where each element is a string, created from 
+//corresponding initial array element
+const arr13 = arr12.map((el, index) => `[${index}]:${el}`); 
+console.log('Initial array is:', arr12);
+console.log('Mapped array `[${index}]:${el}` is:', arr13);
