@@ -231,12 +231,58 @@ console.log(counter.getValue());
 counter.decrement();
 console.log(counter.getValue());
 
-console.log('14-----forEach method');
+console.log('14-----array.forEach method');
 
-//'el' - arbitrary variable
+//'el' - arbitrary variable (in each task here, will have different name)
 const arr5 = [1,2,3,4,5];
 console.log('Initial array', arr5);
 arr5.forEach((el) => {
     el += 2;
     console.log('Array element + 2 equal:', el);
 });
+
+
+console.log('14-----array.filter method');
+
+const arr6 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+console.log("Initial array arr6 is", arr6);
+
+const arr6a = arr6.filter((element1) => {
+    return element1 % 2 === 0;
+})
+console.log("array arr6a with even elements of arr6 is:", arr6a);
+
+const arr7 = [-2, -4, -5, 3, 4, 6, -6, 23];
+console.log('Initial array:', arr7)
+const arr8 = [];
+const arr9 = [];
+
+arr7.filter((item) => {
+    if (item >= 0) {
+        arr8.push(item);
+    } else {
+        arr9.push(item);
+    }
+})
+console.log('New array with positive number:', arr8);
+console.log('New array with negative number:', arr9);
+
+
+const arr10 = [1,2,3,4,5,6,7];
+console.log(
+    arr10.filter((el) => {
+    return el > 3;
+})
+) 
+
+const arr11 = [1,2,3,4,5,6,7,8,9,10];
+console.log(
+    arr11.filter((el) => {
+    return el % 2 ===0;
+})
+)
+
+
+
+
+
