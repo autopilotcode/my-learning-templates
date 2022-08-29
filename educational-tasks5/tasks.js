@@ -140,6 +140,39 @@ const letterCount = (a,b) => {
         return letterCount;
 }
 
-
-
 console.log('letterCount', letterCount("Marrrrry", "r"));
+
+
+// Task #7
+// Our basketball team (x – our team) completed the championship. The result of each match look like
+// "x:y".
+// Results of all matches are recorded in the collection like this: ["95:74", "107:107", "99:110", ...]
+// Write a function – countPoints
+// It should accept a collection of football games scores and count the points of our team in the
+// championship.
+// Rules for counting points for each match:
+// • if x > y - 3 points
+// • if x < y - 0 point
+// • if x = y - 1 point
+// For example:
+// countPoints(['100:90', '110:98', '100:100', '95:46', '54:90', '99:44', '90:90', '111:100']) // => 17
+
+const countPoints = (arrayMatchesResults) => {
+    let finalPointsCount = 0;
+    for (const el of arrayMatchesResults) {
+        const arrayOneElement = el.split(':');
+        let part1OfScore = +arrayOneElement[0];
+        let part2OfScore = +arrayOneElement[1];
+            if (part1OfScore > part2OfScore) {
+                finalPointsCount += 3;
+            } else if (part1OfScore === part2OfScore) {
+                finalPointsCount += 1;
+            } else {
+                continue;
+            }
+    }
+    return finalPointsCount;
+}
+
+
+console.log('final points in the championship:', countPoints(['100:90', '110:98', '100:100', '95:46', '54:90', '99:44', '90:90', '111:100']));
