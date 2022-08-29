@@ -231,4 +231,12 @@ console.log(counter.getValue());
 counter.decrement();
 console.log(counter.getValue());
 
-console.log('14-------');
+console.log('14-----forEach method');
+
+//'el' - arbitrary variable
+const arr5 = [1,2,3,4,5];
+console.log('Initial array', arr5);
+arr5.forEach((el) => {
+    el += 2;
+    console.log('Array element + 2 equal:', el);
+});
