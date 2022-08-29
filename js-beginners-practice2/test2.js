@@ -130,7 +130,7 @@ console.log(sum(numberArray)); //will use array as the 'X' argument
 console.log(sum(...numberArray));//unpack array and use it as arguments for sum(x,y,z)
 //6
 
-console.log('9----REST9gather to an array ar an object)');
+console.log('9----REST(gather to an array ar an object)');
 
 a = 345;
 b = 987;
@@ -246,7 +246,7 @@ arr5.forEach((el) => {
 });
 
 
-console.log('14-----array.filter method - creates new array');
+console.log('14.1-----array.filter method - creates new array');
 //creates new array
 
 const arr6 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
@@ -289,7 +289,7 @@ console.log(
 
 
 
-console.log('14-----map.filter method - creates new array');
+console.log('14.2-----map.filter method - creates new array');
 //creates new array with elements of initial array, processed with function
 
 const arr12 = [2,4,6,8,10,12,14,16];
@@ -306,7 +306,7 @@ console.log('Mapped array `[${index}]:${el}` is:', arr13);
 
 
 
-console.log('14-----array.sort method - modified current array');
+console.log('14.3-----array.sort method - modified current array');
 
 const arr14 = [5, 9, 12, 43, 67, 2, 1, 17, 36];
 console.log('Initial array is:', arr14);
@@ -369,5 +369,28 @@ console.log(
 console.log(
     arr17.findIndex((item) => item < -20)
 ); //index -1 (maybe not exist0)
+
+
+
+console.log('17-----array.some/every - return boolean');
+
+const arr18 = [1, 4, -10, 68, 16, 24, 21, 8, -17];
+
+console.log(
+arr18.some((el) => el < 0),
+arr18.some((el) => typeof item === 'string'), 
+ 
+arr18.every((el) => el < 0),
+arr18.every((el) => Number.isInteger(el))
+);
+
+
+console.log('18-----array.chain of methods');
+
+const arr19 = [1, 4, -10, 68, 16, 24, 21, 8, -17];
+
+console.log(
+    arr19.filter((el) => el > 16).map((el) => el +2).sort((a,b) => a - b)
+);
 
 
