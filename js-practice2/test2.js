@@ -393,4 +393,20 @@ console.log(
     arr19.filter((el) => el > 16).map((el) => el +2).sort((a,b) => a - b)
 );
 
+console.log('19-----reversing a number');
 
+const reverseNumber = (number) => {
+  let numString = number.toString();
+  const firstChar = numString.substring(0, 1);
+  
+  if (isNaN(firstChar)) {
+    let arr = [];
+    numString = numString.substring(1);
+    arr.push(firstChar);
+    numString = numString.split('').reverse().join('');
+    arr.push(numString);
+    return arr.join('');
+  } else {
+    return numString.split('').reverse().join('');
+  }
+};
