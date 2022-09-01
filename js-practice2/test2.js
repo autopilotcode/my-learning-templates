@@ -410,3 +410,13 @@ const reverseNumber = (number) => {
     return numString.split('').reverse().join('');
   }
 };
+
+console.log('19-----arguments object');
+
+function argObject(a,b,c) {
+    console.log(arguments[0]);
+    console.log(arguments[1]);
+    console.log(arguments[2]);
+}
+
+argObject(1,2,3);
