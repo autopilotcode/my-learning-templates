@@ -80,3 +80,23 @@ const callback1 = () => {
 }
 
 setTimeout(main, 3000);
+
+
+
+//A nested function that prints a stack trace error to the console
+
+function firstFunction() {
+    throw new Error ('Stack trace error');
+}
+
+function secondFunction() {
+    firstFunction();
+}
+
+function thirdFunction() {
+    secondFunction();
+}
+
+thirdFunction();
+
+//-------------------
