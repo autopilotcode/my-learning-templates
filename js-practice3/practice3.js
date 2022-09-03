@@ -262,7 +262,45 @@ const arrIsFalse = {};
 console.log(Array.isArray(arrIsTrue), Array.isArray(arrIsFalse));
 
 console.log(
-  '|||----------------find method--------------------|||' +
+  '|||----------------objects and arrays in object--------------------|||' +
     '\n-----------------------------------------------------' +
     '\n-----------------------------------------------------'
 );
+
+const BIRTHDAY = '15.09.1940';
+const MARRIAGE = '17.04.1967';
+const objBase = {
+  name: 'Bibersaza',
+  biography: {
+    junior: 'calm',
+    adult: 'fast',
+    middleAge: {
+      education: 'high school',
+      friendship: 'restricted',
+      importantDates: [6, 16, 18, 33, {birthday: BIRTHDAY, marriage: MARRIAGE}]
+    }
+  },
+  age: 82
+}
+
+console.log(
+    objBase
+);
+console.log(
+  objBase.biography
+);
+console.log(
+  objBase.biography.middleAge.education
+);
+console.log(
+  objBase.biography.middleAge.importantDates
+);
+console.log(
+  objBase.biography.middleAge.importantDates[1]
+);
+
+console.log(
+  objBase.biography.middleAge.importantDates[4].birthday, '\n',
+  objBase.biography.middleAge.importantDates[4].marriage
+);
+
