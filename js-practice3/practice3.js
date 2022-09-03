@@ -208,3 +208,43 @@ const arrSort2 = ['4', '1', '7', '2', '8', '1', '5', '9'];
 const arrSorted2 = arrSort2.sort();
 console.log(arrSorted2);
 
+
+console.log(
+    '|||----------------reduce method--------------------|||' +
+      '\n-----------------------------------------------------' +
+      '\n-----------------------------------------------------'
+  );
+
+  const arrReduce = [200, 300, 400, 500, 600];
+
+  const arrReduced1 = arrReduce.reduce((firstEl, currentEl) => (firstEl + currentEl), 0);
+  console.log(arrReduced1);
+
+  const arrReduced2 = arrReduce.reduce((firstEl, currentEl) => (firstEl + currentEl), 1000);
+  console.log(arrReduced2);
+
+  const arrReduced3 = arrReduce.reduce((firstEl, currentEl) => firstEl - currentEl);
+  console.log(arrReduced3);
+
+  const arrReduced4 = arrReduce.reduce((firstEl, currentEl) => (firstEl - currentEl), 1600);
+  console.log(arrReduced4);
+
+
+const arrReduceFloat = [2.87, 3.12, 4.97, 5.13, 6.34];
+
+  const arrReduced5 = arrReduceFloat.reduce((firstEl, currentEl) => firstEl + Math.round(currentEl));
+  console.log(arrReduced5);
+  
+
+  const arrReduced6 = arrReduceFloat.reduce(funcForArrReducedFloat);
+
+  function funcForArrReducedFloat(firstEl, currentEl) {
+    return Math.round(firstEl) + Math.round(currentEl);
+  }
+  
+  console.log(arrReduced6);
+
+
+
+
+
