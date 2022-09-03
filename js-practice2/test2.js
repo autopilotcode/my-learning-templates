@@ -51,6 +51,7 @@
     console.log(func1());
     console.log('3-----------------');
 
+let b;    
 let a = b = 0;
 let c = a++;
 let d = ++b;
@@ -92,6 +93,7 @@ arrow2();
 
 //no curly braces & parenthesis in the end
 const arrow1 = (() => console.log('Self calling function'))();
+console.log(arrow1);
 
 
 console.log('8-----------------SPREAD');
@@ -378,7 +380,7 @@ const arr18 = [1, 4, -10, 68, 16, 24, 21, 8, -17];
 
 console.log(
 arr18.some((el) => el < 0),
-arr18.some((el) => typeof item === 'string'), 
+arr18.some((item) => typeof item === 'string'), 
  
 arr18.every((el) => el < 0),
 arr18.every((el) => Number.isInteger(el))
@@ -411,9 +413,13 @@ const reverseNumber = (number) => {
   }
 };
 
+console.log(
+    reverseNumber(12345678)
+);
+
 console.log('19-----arguments object');
 
-function argObject(a,b,c) {
+function argObject() {
     console.log(arguments[0]);
     console.log(arguments[1]);
     console.log(arguments[2]);
