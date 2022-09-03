@@ -148,7 +148,7 @@ const resArrayFinal = [
 console.log('Final array is (all elements from all resArrays):', resArrayFinal);
 
 console.log(
-  '|||----------------map method--------------------|||' +
+  '|||----------------filter method--------------------|||' +
     '\n-----------------------------------------------------' +
     '\n-----------------------------------------------------'
 );
@@ -169,4 +169,42 @@ const arrMaxSpeed = [];
 arrMaxSpeed.push(arrayMethods1.filter((el) => el.maxSpeed >= 170));
 
 console.log('Cars with speed >= 170km/h:', arrMaxSpeed);
+
+
+
+console.log(
+    '|||----------------map method--------------------|||' +
+      '\n-----------------------------------------------------' +
+      '\n-----------------------------------------------------'
+  );
+
+const arrAnimal = [
+    {type: 'bird', area: 'air', dangerous: 'low', age: 10},
+    {type: 'snake', area: 'ground', dangerous: 'high', age: 10},
+    {type: 'fish', area: 'water', dangerous: 'middle', age: 10},
+    {type: 'insect', area: 'air', dangerous: 'middle', age: 10},
+    {type: 'mammal', area: 'ground', dangerous: 'low', age: 10},
+    {type: 'bacteria', area: 'water', dangerous: 'high', age: 10}
+];
+
+const arrDangerous = arrAnimal.map((item) => item.age += 10);
+
+console.log(arrDangerous);
+
+
+console.log(
+    '|||----------------sort method--------------------|||' +
+      '\n-----------------------------------------------------' +
+      '\n-----------------------------------------------------'
+  );
+
+const arrSort1 = [4, 1, 7, 2, 8, 1, 5, 9];
+
+const arrSorted1 = arrSort1.sort((a,b) => b - a);
+console.log(arrSorted1);
+
+const arrSort2 = ['4', '1', '7', '2', '8', '1', '5', '9'];
+
+const arrSorted2 = arrSort2.sort();
+console.log(arrSorted2);
 
