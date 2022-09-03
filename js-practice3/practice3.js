@@ -277,41 +277,35 @@ const objBase = {
     middleAge: {
       education: 'high school',
       friendship: 'restricted',
-      importantDates: [6, 16, 18, 33, {birthday: BIRTHDAY, marriage: MARRIAGE}]
-    }
+      importantDates: [
+        6,
+        16,
+        18,
+        33,
+        { birthday: BIRTHDAY, marriage: MARRIAGE },
+      ],
+    },
   },
-  age: 82
-}
+  age: 82,
+};
+
+console.log(objBase);
+console.log(objBase.biography);
+console.log(objBase.biography.middleAge.education);
+console.log(objBase.biography.middleAge.importantDates);
+console.log(objBase.biography.middleAge.importantDates[1]);
 
 console.log(
-    objBase
-);
-console.log(
-  objBase.biography
-);
-console.log(
-  objBase.biography.middleAge.education
-);
-console.log(
-  objBase.biography.middleAge.importantDates
-);
-console.log(
-  objBase.biography.middleAge.importantDates[1]
-);
-
-console.log(
-  objBase.biography.middleAge.importantDates[4].birthday, '\n',
+  objBase.biography.middleAge.importantDates[4].birthday,
+  '\n',
   objBase.biography.middleAge.importantDates[4].marriage
 );
-
-
 
 console.log(
   '|||----------------string features  --------------------|||' +
     '\n-----------------------------------------------------' +
     '\n-----------------------------------------------------'
 );
-
 
 const lefts = 'Mary Bros';
 const rights = 'Peter Paul';
@@ -320,7 +314,6 @@ let templateLiterals = lefts + rights;
 let templateLiterals1 = lefts + ' ' + rights;
 let templateLiterals2 = `As lefts, we know ${lefts}`;
 let templateLiterals3 = 'As rights, ' + rights + ' we know';
-
 
 console.log(templateLiterals);
 console.log(templateLiterals.length);
@@ -332,26 +325,20 @@ console.log(templateLiterals3);
 console.log(templateLiterals3.length);
 
 //string - accessing character
+console.log(templateLiterals3[0], templateLiterals3[3], templateLiterals3[18]);
 console.log(
-  templateLiterals3[0],
-  templateLiterals3[3],
-  templateLiterals3[18]
-  );
-  console.log(
-    templateLiterals3.charAt(0),
-    templateLiterals3.charAt(3),
-    templateLiterals3.charAt(18)
-    );
+  templateLiterals3.charAt(0),
+  templateLiterals3.charAt(3),
+  templateLiterals3.charAt(18)
+);
 
 //toString, slice, split, reverse
 const number = 7892345789;
 const numberArray = number.split;
 console.log(numberArray);
 
-
 const numberToString = number.toString();
 console.log(numberToString);
-
 
 const numberSplitted = numberToString.split('');
 console.log(numberSplitted);
@@ -361,15 +348,24 @@ const numberSplittedReversedToString = numberSplittedReversed.toString();
 console.log(numberSplittedReversedToString);
 console.log(typeof numberSplittedReversedToString);
 
-
-const numberSliced = numberToString.slice('1','5'); //not including last argument
+const numberSliced = numberToString.slice('1', '5'); //not including last argument
 console.log(numberSliced);
 
-
 //type coercion
+// eslint-disable-next-line no-undef
 
+console.log(
+  '________________________________\n' + '------------Type coercion-------'
+);
 const x = '9';
 const y = 8;
+console.log('Let variables have next values:', `\nx=: ${x} string`, `\ny=: ${y}`, 'number', '\nThree variants are considered below:');
 
-const res = x +y;
-console.log(res);
+const res = x + y;
+console.log(`1st - "(+)" str + num: ${res}`);
+
+const res1 = Number(x) + y;
+console.log(`2nd - "(+)" str-to-Number() + num:' ${res1}`);
+
+const res2 = x * y;
+console.log(`3rd - "(*)" str multiply number: ${res2}`);
