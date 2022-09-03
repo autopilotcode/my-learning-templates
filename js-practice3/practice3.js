@@ -109,7 +109,7 @@ const resArrayAdult = [];
 const resArrayMen = [];
 const resArrayWomen = [];
 
-arrayMethods = [
+const arrayMethods = [
   { factory: 'John', year: 28, maxSpeed: 'male' },
   { factory: 'Ali', year: 72, maxSpeed: 'male' },
   { factory: 'July', year: 14, maxSpeed: 'female' },
@@ -153,7 +153,7 @@ console.log(
     '\n-----------------------------------------------------'
 );
 
-arrayMethods1 = [
+const arrayMethods1 = [
   { factory: 'Mercedes', year: 2022, maxSpeed: '213' },
   { factory: 'BMW', year: 1971, maxSpeed: '156' },
   { factory: 'Volvo', year: 1983, maxSpeed: '144' },
@@ -170,37 +170,34 @@ arrMaxSpeed.push(arrayMethods1.filter((el) => el.maxSpeed >= 170));
 
 console.log('Cars with speed >= 170km/h:', arrMaxSpeed);
 
-
-
 console.log(
-    '|||----------------map method--------------------|||' +
-      '\n-----------------------------------------------------' +
-      '\n-----------------------------------------------------'
-  );
+  '|||----------------map method--------------------|||' +
+    '\n-----------------------------------------------------' +
+    '\n-----------------------------------------------------'
+);
 
 const arrAnimal = [
-    {type: 'bird', area: 'air', dangerous: 'low', age: 10},
-    {type: 'snake', area: 'ground', dangerous: 'high', age: 10},
-    {type: 'fish', area: 'water', dangerous: 'middle', age: 10},
-    {type: 'insect', area: 'air', dangerous: 'middle', age: 10},
-    {type: 'mammal', area: 'ground', dangerous: 'low', age: 10},
-    {type: 'bacteria', area: 'water', dangerous: 'high', age: 10}
+  { type: 'bird', area: 'air', dangerous: 'low', age: 10 },
+  { type: 'snake', area: 'ground', dangerous: 'high', age: 10 },
+  { type: 'fish', area: 'water', dangerous: 'middle', age: 10 },
+  { type: 'insect', area: 'air', dangerous: 'middle', age: 10 },
+  { type: 'mammal', area: 'ground', dangerous: 'low', age: 10 },
+  { type: 'bacteria', area: 'water', dangerous: 'high', age: 10 },
 ];
 
-const arrDangerous = arrAnimal.map((item) => item.age += 10);
+const arrDangerous = arrAnimal.map((item) => (item.age += 10));
 
 console.log(arrDangerous);
 
-
 console.log(
-    '|||----------------sort method--------------------|||' +
-      '\n-----------------------------------------------------' +
-      '\n-----------------------------------------------------'
-  );
+  '|||----------------sort method--------------------|||' +
+    '\n-----------------------------------------------------' +
+    '\n-----------------------------------------------------'
+);
 
 const arrSort1 = [4, 1, 7, 2, 8, 1, 5, 9];
 
-const arrSorted1 = arrSort1.sort((a,b) => b - a);
+const arrSorted1 = arrSort1.sort((a, b) => b - a);
 console.log(arrSorted1);
 
 const arrSort2 = ['4', '1', '7', '2', '8', '1', '5', '9'];
@@ -208,49 +205,64 @@ const arrSort2 = ['4', '1', '7', '2', '8', '1', '5', '9'];
 const arrSorted2 = arrSort2.sort();
 console.log(arrSorted2);
 
-
 console.log(
-    '|||----------------reduce method--------------------|||' +
-      '\n-----------------------------------------------------' +
-      '\n-----------------------------------------------------'
-  );
+  '|||----------------reduce method--------------------|||' +
+    '\n-----------------------------------------------------' +
+    '\n-----------------------------------------------------'
+);
 
-  const arrReduce = [200, 300, 400, 500, 600];
+const arrReduce = [200, 300, 400, 500, 600];
 
-  const arrReduced1 = arrReduce.reduce((firstEl, currentEl) => (firstEl + currentEl), 0);
-  console.log(arrReduced1);
+const arrReduced1 = arrReduce.reduce(
+  (firstEl, currentEl) => firstEl + currentEl,
+  0
+);
+console.log(arrReduced1);
 
-  const arrReduced2 = arrReduce.reduce((firstEl, currentEl) => (firstEl + currentEl), 1000);
-  console.log(arrReduced2);
+const arrReduced2 = arrReduce.reduce(
+  (firstEl, currentEl) => firstEl + currentEl,
+  1000
+);
+console.log(arrReduced2);
 
-  const arrReduced3 = arrReduce.reduce((firstEl, currentEl) => firstEl - currentEl);
-  console.log(arrReduced3);
+const arrReduced3 = arrReduce.reduce(
+  (firstEl, currentEl) => firstEl - currentEl
+);
+console.log(arrReduced3);
 
-  const arrReduced4 = arrReduce.reduce((firstEl, currentEl) => (firstEl - currentEl), 1600);
-  console.log(arrReduced4);
-
+const arrReduced4 = arrReduce.reduce(
+  (firstEl, currentEl) => firstEl - currentEl,
+  1600
+);
+console.log(arrReduced4);
 
 const arrReduceFloat = [2.87, 3.12, 4.97, 5.13, 6.34];
 
-  const arrReduced5 = arrReduceFloat.reduce((firstEl, currentEl) => firstEl + Math.round(currentEl));
-  console.log(arrReduced5);
-  
+const arrReduced5 = arrReduceFloat.reduce(
+  (firstEl, currentEl) => firstEl + Math.round(currentEl)
+);
+console.log(arrReduced5);
 
-  const arrReduced6 = arrReduceFloat.reduce(funcForArrReducedFloat);
+const arrReduced6 = arrReduceFloat.reduce(funcForArrReducedFloat);
 
-  function funcForArrReducedFloat(firstEl, currentEl) {
-    return Math.round(firstEl) + Math.round(currentEl);
-  }
-  
-  console.log(arrReduced6);
+function funcForArrReducedFloat(firstEl, currentEl) {
+  return Math.round(firstEl) + Math.round(currentEl);
+}
 
+console.log(arrReduced6);
 
-  console.log(
-    '|||----------------isArray method--------------------|||' +
-      '\n-----------------------------------------------------' +
-      '\n-----------------------------------------------------'
-  );
+console.log(
+  '|||----------------Array.isArray method--------------------|||' +
+    '\n-----------------------------------------------------' +
+    '\n-----------------------------------------------------'
+);
 
 const arrIsTrue = [];
 const arrIsFalse = {};
-console.log(arrIsTrue, arrIsFalse);
+console.log(Array.isArray(arrIsTrue), Array.isArray(arrIsFalse));
+
+console.log(
+  '|||----------------find method--------------------|||' +
+    '\n-----------------------------------------------------' +
+    '\n-----------------------------------------------------'
+);
