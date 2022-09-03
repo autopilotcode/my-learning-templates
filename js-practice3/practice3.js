@@ -245,6 +245,12 @@ const arrReduceFloat = [2.87, 3.12, 4.97, 5.13, 6.34];
   console.log(arrReduced6);
 
 
+  console.log(
+    '|||----------------isArray method--------------------|||' +
+      '\n-----------------------------------------------------' +
+      '\n-----------------------------------------------------'
+  );
 
-
-
+const arrIsTrue = [];
+const arrIsFalse = {};
+console.log(arrIsTrue, arrIsFalse);
