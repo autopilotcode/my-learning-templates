@@ -304,3 +304,72 @@ console.log(
   objBase.biography.middleAge.importantDates[4].marriage
 );
 
+
+
+console.log(
+  '|||----------------string features  --------------------|||' +
+    '\n-----------------------------------------------------' +
+    '\n-----------------------------------------------------'
+);
+
+
+const lefts = 'Mary Bros';
+const rights = 'Peter Paul';
+
+let templateLiterals = lefts + rights;
+let templateLiterals1 = lefts + ' ' + rights;
+let templateLiterals2 = `As lefts, we know ${lefts}`;
+let templateLiterals3 = 'As rights, ' + rights + ' we know';
+
+
+console.log(templateLiterals);
+console.log(templateLiterals.length);
+console.log(templateLiterals1);
+console.log(templateLiterals1.length);
+console.log(templateLiterals2);
+console.log(templateLiterals2.length);
+console.log(templateLiterals3);
+console.log(templateLiterals3.length);
+
+//string - accessing character
+console.log(
+  templateLiterals3[0],
+  templateLiterals3[3],
+  templateLiterals3[18]
+  );
+  console.log(
+    templateLiterals3.charAt(0),
+    templateLiterals3.charAt(3),
+    templateLiterals3.charAt(18)
+    );
+
+//toString, slice, split, reverse
+const number = 7892345789;
+const numberArray = number.split;
+console.log(numberArray);
+
+
+const numberToString = number.toString();
+console.log(numberToString);
+
+
+const numberSplitted = numberToString.split('');
+console.log(numberSplitted);
+const numberSplittedReversed = numberSplitted.reverse().join('');
+console.log(numberSplittedReversed);
+const numberSplittedReversedToString = numberSplittedReversed.toString();
+console.log(numberSplittedReversedToString);
+console.log(typeof numberSplittedReversedToString);
+
+
+const numberSliced = numberToString.slice('1','5'); //not including last argument
+console.log(numberSliced);
+
+
+//type coercion
+
+const x = '9';
+const y = 8;
+
+const res = x +y;
+console.log(res);
