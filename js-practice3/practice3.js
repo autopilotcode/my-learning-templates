@@ -359,7 +359,13 @@ console.log(
 );
 const x = '9';
 const y = 8;
-console.log('Let variables have next values:', `\nx=: ${x} string`, `\ny=: ${y}`, 'number', '\nThree variants are considered below:');
+console.log(
+  'Let variables have next values:',
+  `\nx=: ${x} string`,
+  `\ny=: ${y}`,
+  'number',
+  '\nThree variants are considered below:'
+);
 
 const res = x + y;
 console.log(`1st - "(+)" str + num: ${res}`);
@@ -370,32 +376,27 @@ console.log(`2nd - "(+)" str-to-Number() + num:' ${res1}`);
 const res2 = x * y;
 console.log(`3rd - "(*)" str * number: ${res2}`);
 
-
-
 console.log(
   '________________________________\n' + '------forEach+if and filter-----'
 );
 
-const arr1 = [null,  NaN, true, false, 'random', 64];
-console.log('Initial array is:\'', arr1);
+const arr1 = [null, NaN, true, false, 'random', 64];
+console.log("Initial array is:'", arr1);
 
 let newArr1 = [];
-arr1.forEach(el => {
+arr1.forEach((el) => {
   if (Boolean(el) === true) {
     newArr1.push(el);
   }
-}
-);
+});
 console.log('forEach: newArr1[el] === true: ', newArr1);
 
 //--
-const arrFilteredTrue = arr1.filter(el => (Boolean(el) === true));
+const arrFilteredTrue = arr1.filter((el) => Boolean(el) === true);
 console.log('filer: newArr1[el] === true: ', arrFilteredTrue);
 
-const arrFilteredFalse = arr1.filter(el => (Boolean(el) === false));
+const arrFilteredFalse = arr1.filter((el) => Boolean(el) === false);
 console.log('filter: newArray1[el] === false: ', arrFilteredFalse);
-
-
 
 console.log(
   '________________________________\n' + '------function return function-----'
@@ -409,9 +410,10 @@ const sayHello = sayWord('Hello');
 
 sayHello();
 
-
 console.log(
-  '________________________________\n' + '------confirm, prompt & number processing-----\n' + '------uncomment & test this code in the browser console-----'
+  '________________________________\n' +
+    '------confirm, prompt & number processing-----\n' +
+    '------uncomment & test this code in the browser console-----'
 );
 
 //confirm returns true if OK chose, returns false if CANCEL chose
@@ -419,7 +421,6 @@ console.log(
 //confirm
 // const resConfirm = confirm('CHECK IT');
 // console.log(resConfirm);
-
 
 // //prompt
 // let enteredNumber = prompt('Enter the number (for float number use ".")');
@@ -432,7 +433,7 @@ console.log(
 //     } else if (enteredNumber == 0) {
 //   console.log('You entered number "0", we can\'t calculate the result for you.');
 // }else {
-//       console.log('Correct number enter!'); 
+//       console.log('Correct number enter!');
 //       console.log('Your entered number is:', enteredNumber);
 //       console.log('Math.round', Math.round(enteredNumber));
 //       console.log('Sign "+"', +enteredNumber);
@@ -442,3 +443,49 @@ console.log(
 //       console.log('Math.floor', Math.floor(enteredNumber));
 //     }
 
+console.log(
+  '________________________________\n' +
+    '------function as object value-----\n' +
+    '------function return function-----'
+);
+
+const CONST1 = 'key 3';
+const CONST2 = 'key 5';
+
+const obj = {
+  'key 1': ($) => console.log("function in 'key 1':", $),
+  key2: (x) => console.log('function in key2:', x),
+  [CONST1]: (y) => console.log('function in key3:', y),
+  'key 4': () => console.log("function without argument in 'key 4'."),
+  [CONST2]: (_) => console.log("function called with CONST in 'key 5':", _),
+  key6: {
+    firstName: 'Name', lastName: (__) => console.log("function called with object on object value key6:", __)
+  },
+};
+console.log(obj);
+
+obj['key 1'](45);
+obj.key2(98.98);
+obj['key 3']("'34 string'");
+obj['key 4']();
+obj['key 5'](+(Math.random() * 1000).toFixed(0));
+obj.key6.lastName();
+
+let resSum = parseFloat(Math.random() * 1000);
+// function funcOuter(aaa) {
+  const funcOuter = (aaa) => {
+  return {
+    return1: () => console.log('\nfunction in return1 has an argument:', aaa),
+    return2: () => console.log('function in return2 has an argument:', aaa),
+    return3: () => console.log('function in return3 has an argument:', aaa),
+  };
+}
+const constFuncOuter = funcOuter(resSum);
+constFuncOuter['return1']();
+constFuncOuter.return2();
+
+
+
+console.log(
+  '________________________________\n' + '------ -----\n' + '------ -----'
+);
