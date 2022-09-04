@@ -442,3 +442,32 @@ console.log(
 //       console.log('Math.floor', Math.floor(enteredNumber));
 //     }
 
+console.log(
+  '________________________________\n' + '------function as object value-----\n' + '------function return function-----'
+);
+
+const obj = {
+  key1: (w) => console.log("function in key1", w),
+  key2: (x) => console.log("function in key2", x),
+  key3: (y) => console.log("function in key3", y),
+  key4: () => console.log("function without argument in key4"),
+}
+console.log(obj);
+
+obj.key1(45);
+obj.key2(98.98);
+obj.key3("'34 string'");
+obj.key4();
+
+let resSum = 778;
+function funcOuter(aaa) {
+  return {
+  return1: () => console.log("function in return1 has an argument:", aaa),
+  return2: () => console.log("function in return2has an argument:", aaa),
+  return3: () => console.log("function in return3has an argument:", aaa)
+};
+}
+const constFuncOuter = funcOuter(resSum);
+constFuncOuter.return1();
+
+
