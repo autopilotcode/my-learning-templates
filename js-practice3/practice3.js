@@ -368,4 +368,30 @@ const res1 = Number(x) + y;
 console.log(`2nd - "(+)" str-to-Number() + num:' ${res1}`);
 
 const res2 = x * y;
-console.log(`3rd - "(*)" str multiply number: ${res2}`);
+console.log(`3rd - "(*)" str * number: ${res2}`);
+
+
+
+console.log(
+  '________________________________\n' + '------forEach+if and filter-----'
+);
+
+const arr1 = [null,  NaN, true, false, 'random', 64];
+console.log('Initial array is:\'', arr1);
+
+let newArr1 = [];
+arr1.forEach(el => {
+  if (Boolean(el) === true) {
+    newArr1.push(el);
+  }
+}
+);
+console.log('forEach: newArr1[el] === true: ', newArr1);
+
+//--
+const arrFilteredTrue = arr1.filter(el => (Boolean(el) === true));
+console.log('filer: newArr1[el] === true: ', arrFilteredTrue);
+
+const arrFilteredFalse = arr1.filter(el => (Boolean(el) === false));
+console.log('filter: newArray1[el] === false: ', arrFilteredFalse);
+
