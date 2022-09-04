@@ -395,3 +395,50 @@ console.log('filer: newArr1[el] === true: ', arrFilteredTrue);
 const arrFilteredFalse = arr1.filter(el => (Boolean(el) === false));
 console.log('filter: newArray1[el] === false: ', arrFilteredFalse);
 
+
+
+console.log(
+  '________________________________\n' + '------function return function-----'
+);
+
+function sayWord(word) {
+  return () => console.log(word);
+}
+
+const sayHello = sayWord('Hello');
+
+sayHello();
+
+
+console.log(
+  '________________________________\n' + '------confirm, prompt & number processing-----\n' + '------uncomment & test this code in the browser console-----'
+);
+
+//confirm returns true if OK chose, returns false if CANCEL chose
+
+//confirm
+// const resConfirm = confirm('CHECK IT');
+// console.log(resConfirm);
+
+
+// //prompt
+// let enteredNumber = prompt('Enter the number (for float number use ".")');
+//     if (isNaN(enteredNumber)) {
+//       console.log('You entered string value: \'', enteredNumber, '\' it\'s a', NaN, 'type, we can\'t calculate the result for you.');
+//     } else if (enteredNumber == null) {
+//          console.log('CANCEL button has been pressed, entered value is:', null);
+//     } else if (enteredNumber.length == 0) {
+//       console.log('You entered nothing, entered value is:', NaN, 'we can\'t calculate the result for you.');
+//     } else if (enteredNumber == 0) {
+//   console.log('You entered number "0", we can\'t calculate the result for you.');
+// }else {
+//       console.log('Correct number enter!'); 
+//       console.log('Your entered number is:', enteredNumber);
+//       console.log('Math.round', Math.round(enteredNumber));
+//       console.log('Sign "+"', +enteredNumber);
+//       console.log('parseFloat', parseFloat(enteredNumber));
+//       console.log('parseInt', parseInt(enteredNumber));
+//       console.log('Math.ceil', Math.ceil(enteredNumber));
+//       console.log('Math.floor', Math.floor(enteredNumber));
+//     }
+
