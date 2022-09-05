@@ -451,6 +451,9 @@ console.log(
 
 const CONST1 = 'key 3';
 const CONST2 = 'key 5';
+const VARIABLE1 = 45;
+const VARIABLE2 = 98.98;
+const VARIABLE3 = '34 string';
 
 const obj = {
   'key 1': ($) => console.log("function in 'key 1':", $),
@@ -464,14 +467,14 @@ const obj = {
 };
 console.log(obj);
 
-obj['key 1'](45);
-obj.key2(98.98);
-obj['key 3']("'34 string'");
+obj['key 1'](VARIABLE1);
+obj.key2(VARIABLE2);
+obj['key 3'](VARIABLE3);
 obj['key 4']();
-obj['key 5'](+(Math.random() * 1000).toFixed(0));
-obj.key6.lastName(+(Math.random() * 10).toFixed(0));
+obj['key 5'](+Math.floor((Math.random() * 1000)));
+obj.key6.lastName(+(Math.random() * 10).toFixed(2));
 
-let resSum = parseFloat(Math.random() * 1000);
+let resSum = parseFloat(Math.ceil(Math.random() * 1000));
 // function funcOuter(aaa) {
   const funcOuter = (aaa) => {
   return {
@@ -487,5 +490,12 @@ constFuncOuter.return2();
 
 
 console.log(
-  '________________________________\n' + '------ -----\n' + '------ -----'
+  '________________________________\n' + 'number to string\n' + '------ -----'
 );
+
+const hello = 132;
+console.log(hello);
+console.log(typeof hello);
+const newHello =  hello.toString();
+console.log(newHello);
+console.log(typeof newHello);
