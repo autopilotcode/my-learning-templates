@@ -542,4 +542,35 @@ const func44 = (b44) => {
 func33('age');
 
 
-console.log('________________________________\n' + '' + '------ -----');
+console.log('________________________________\n' + 'instance of & this' + '------ -----');
+
+const funcInst = () => {typeof false};  //meaningless function body, just for test of instanceof
+console.log('funcInst instanceof Function', funcInst instanceof Function);
+  
+
+class MyClass {}
+const c12 = new MyClass();
+console.log('c12 instanceof MyClass', c12 instanceof MyClass);
+
+class Parent {}
+class MyClass1 extends Parent {}
+
+const c14 = new MyClass1()
+console.log('c14 instanceof Parent', c14 instanceof Parent);
+
+
+//this
+
+const lastName = "Outside";
+
+const obj3 = {
+  name: 'Ann',
+  lastName: 'Inside',
+  funcKey: function() {console.log(this.lastName)},
+  funcKey1: function() {console.log(lastName)}
+
+}
+
+obj3.funcKey();
+obj3.funcKey1();
+
