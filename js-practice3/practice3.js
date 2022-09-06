@@ -645,3 +645,6 @@ console.log(
     'assignment operators, details' +
     '------ -----'
 );
+
+a = 44;
+console.log('44' = a);
