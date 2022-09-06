@@ -513,8 +513,6 @@ const arrD = [1, 2, 3, 4, 5];
 const [first, second, ...other] = arrD;
 console.log(first, second, other);
 
-
-
 function func1() {
   let a = 1;
   console.log(a);
@@ -526,8 +524,6 @@ console.log(typeof { k: 1, k1: 2 });
 console.log(typeof func1);
 console.log(typeof null); //object
 console.log(typeof undefined);
-
-
 
 const obj2 = { name: 'Sara', age: 61, gender: 'female' };
 
@@ -541,12 +537,14 @@ const func44 = (b44) => {
 };
 func33('age');
 
+console.log(
+  '________________________________\n' + 'instance of & this' + '------ -----'
+);
 
-console.log('________________________________\n' + 'instance of & this' + '------ -----');
-
-const funcInst = () => {typeof false};  //meaningless function body, just for test of instanceof
+const funcInst = () => {
+  typeof false;
+}; //meaningless function body, just for test of instanceof
 console.log('funcInst instanceof Function', funcInst instanceof Function);
-  
 
 class MyClass {}
 const c12 = new MyClass();
@@ -555,22 +553,95 @@ console.log('c12 instanceof MyClass', c12 instanceof MyClass);
 class Parent {}
 class MyClass1 extends Parent {}
 
-const c14 = new MyClass1()
+const c14 = new MyClass1();
 console.log('c14 instanceof Parent', c14 instanceof Parent);
-
 
 //this
 
-const lastName = "Outside";
+const lastName = 'Outside';
 
 const obj3 = {
   name: 'Ann',
   lastName: 'Inside',
-  funcKey: function() {console.log(this.lastName)},
-  funcKey1: function() {console.log(lastName)}
-
-}
+  funcKey: function () {
+    console.log(this.lastName);
+  },
+  funcKey1: function () {
+    console.log(lastName);
+  },
+};
 
 obj3.funcKey();
 obj3.funcKey1();
 
+console.log(
+  '________________________________\n' +
+    'arithmetic operators, details' +
+    '------ -----'
+);
+
+a = 3 + 4 + '5' + 4;
+console.log(a);
+
+c = 3 + 4;
+console.log(c);
+c += '5';
+console.log(c);
+c += 4;
+console.log(c);
+
+let d = Number('8') + Number('7') + 5;
+console.log(d);
+
+let e = 5 ** 2; //exponentiation in English
+console.log(e);
+
+//increment & decrement
+
+let a1, c1, d1, e1;
+
+a = c = d = e = 0;
+console.log(a, c, d, e);
+
+a1 = a++;
+console.log(a1); //0
+c1 = ++c;
+console.log(c1); //1
+d1 = d--;
+console.log(d1); //0
+e1 = --e;
+console.log(e1); //-1
+
+
+
+console.log(
+  '________________________________\n' +
+    'assignment operators, details' +
+    '------ -----'
+);
+
+a = a1 = e = e1 = 0;
+c = c1 = 5;
+d = d1 = 20;
+
+a += 10;
+console.log(a);
+
+a1 -= 5;
+console.log(a1);
+
+c *= 5;
+console.log(c);
+
+c1 /= 5;
+console.log(c1);
+
+d %= 3;
+console.log(d);
+
+
+console.log(
+  '________________________________\n' +
+    'assignment operators, details' +
+    '------ -----'
+);
