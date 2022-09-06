@@ -462,7 +462,9 @@ const obj = {
   'key 4': () => console.log("function without argument in 'key 4'."),
   [CONST2]: (_) => console.log("function called with CONST in 'key 5':", _),
   key6: {
-    firstName: 'Name', lastName: (__) => console.log("function called with object on object value key6:", __)
+    firstName: 'Name',
+    lastName: (__) =>
+      console.log('function called with object on object value key6:', __),
   },
 };
 console.log(obj);
@@ -471,23 +473,21 @@ obj['key 1'](VARIABLE1);
 obj.key2(VARIABLE2);
 obj['key 3'](VARIABLE3);
 obj['key 4']();
-obj['key 5'](+Math.floor((Math.random() * 1000)));
+obj['key 5'](+Math.floor(Math.random() * 1000));
 obj.key6.lastName(+(Math.random() * 10).toFixed(2));
 
 let resSum = parseFloat(Math.ceil(Math.random() * 1000));
 // function funcOuter(aaa) {
-  const funcOuter = (aaa) => {
+const funcOuter = (aaa) => {
   return {
     return1: () => console.log('\nfunction in return1 has an argument:', aaa),
     return2: () => console.log('function in return2 has an argument:', aaa),
     return3: () => console.log('function in return3 has an argument:', aaa),
   };
-}
+};
 const constFuncOuter = funcOuter(resSum);
 constFuncOuter['return1']();
 constFuncOuter.return2();
-
-
 
 console.log(
   '________________________________\n' + 'number to string\n' + '------ -----'
@@ -496,6 +496,50 @@ console.log(
 const hello = 132;
 console.log(hello);
 console.log(typeof hello);
-const newHello =  hello.toString();
+const newHello = hello.toString();
 console.log(newHello);
 console.log(typeof newHello);
+
+console.log('________________________________\n' + '' + '------ -----');
+
+let f;
+console.log(typeof f, f);
+f = 5;
+console.log(typeof f, f);
+f = null;
+console.log('typeof of f variable is:', typeof f, `\nand it's equal to: ${f}`);
+
+const arrD = [1, 2, 3, 4, 5];
+const [first, second, ...other] = arrD;
+console.log(first, second, other);
+
+
+
+function func1() {
+  let a = 1;
+  console.log(a);
+}
+console.log(typeof true);
+console.log(typeof 44);
+console.log(typeof 'string');
+console.log(typeof { k: 1, k1: 2 });
+console.log(typeof func1);
+console.log(typeof null); //object
+console.log(typeof undefined);
+
+
+
+const obj2 = { name: 'Sara', age: 61, gender: 'female' };
+
+const func33 = (a33) => {
+  console.log('1', a33 in obj2);
+  func44('gender');
+};
+
+const func44 = (b44) => {
+  console.log(b44 in obj2);
+};
+func33('age');
+
+
+console.log('________________________________\n' + '' + '------ -----');
