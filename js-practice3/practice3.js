@@ -612,8 +612,6 @@ console.log(d1); //0
 e1 = --e;
 console.log(e1); //-1
 
-
-
 console.log(
   '________________________________\n' +
     'assignment operators, details' +
@@ -639,7 +637,6 @@ console.log(c1);
 d %= 3;
 console.log(d);
 
-
 console.log(
   '________________________________\n' +
     'assignment operators, details' +
@@ -647,4 +644,81 @@ console.log(
 );
 
 a = 44;
-console.log('44' = a);
+console.log('44' == a); //true
+
+console.log('23' != a); //true
+
+console.log('44' === a); //false
+
+console.log('44' !== a); //true
+
+// eslint-disable-next-line no-undef
+b = undefined;
+// eslint-disable-next-line no-undef
+console.log(b == null); //true
+// eslint-disable-next-line no-undef
+console.log(b === null); //false
+
+// eslint-disable-next-line no-undef
+b = null;
+// eslint-disable-next-line no-undef
+console.log(b == null); //true
+// eslint-disable-next-line no-undef
+console.log(b === null); //true
+
+//NaN !== NaN //true
+//NaN != NaN //true
+
+//setTimeout inside a function
+const funcSetTimeout = () => {
+  console.log('Before timeout');
+  setTimeout(() => console.log('After 1500 timeout'), 1500);
+  setTimeout(() => console.log('After 3000 timeout'), 3000);
+};
+funcSetTimeout();
+
+console.log(
+  '________________________________\n' +
+    'logical operators, details' +
+    '------ -----'
+);
+
+// && returns first false ol the last operand
+console.log('1' && null && 8); //null
+
+console.log('1' && true && 8); //8
+
+// || returns first true or last
+console.log('1' || null || 8); //'1'
+
+console.log(0 || NaN || undefined); //undefined
+
+a = !false;
+a1 = !3,
+c = !0;
+c1 = !NaN;
+console.log('Output of !false, !3, !0, !NaN are:', a, a1, c, c1);
+
+// !! converting to boolean
+
+const TEXT = ' - these values converted to boolean are:';
+console.log(
+  `!!5, !!-3, !!"string", Boolean({1: 2, 2: 3}), !![1,2,3], !!true${TEXT}\n`,
+  !!5,
+  !!-3,
+  !!'string',
+  Boolean({ 1: 2, 2: 3 }),
+  !![1, 2, 3],
+  !!true
+); //all true
+console.log(
+  `!!0, !!null, Boolean(null), !!undefined, !!NaN, !!' ', !!false${TEXT}\n`,
+  !!0,
+  !!null,
+  Boolean(null),
+  !!undefined,
+    !!NaN,
+    !!'',
+    !!false
+); //all false
+
