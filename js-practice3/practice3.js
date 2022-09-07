@@ -694,8 +694,7 @@ console.log('1' || null || 8); //'1'
 console.log(0 || NaN || undefined); //undefined
 
 a = !false;
-a1 = !3,
-c = !0;
+(a1 = !3), (c = !0);
 c1 = !NaN;
 console.log('Output of !false, !3, !0, !NaN are:', a, a1, c, c1);
 
@@ -717,8 +716,56 @@ console.log(
   !!null,
   Boolean(null),
   !!undefined,
-    !!NaN,
-    !!'',
-    !!false
+  !!NaN,
+  !!'',
+  !!false
 ); //all false
 
+console.log(
+  '________________________________\n' + 'operator precedence' + '------ -----'
+);
+
+a = 3;
+a1 = 9;
+c = 1;
+c1 = ++a + a1++ + c--; //4 + 9 + 1
+console.log(c1); //14
+
+console.log(
+  '________________________________\n' + 'type conversion' + '------ -----'
+);
+
+a = 876;
+c = 893;
+a = String(a);
+c = c.toString();
+console.log(a, ' - type is:', typeof a);
+console.log(c, ' - type is:', typeof c);
+
+c1 = new Date();
+console.log(c1, ' - type is:', typeof c1);
+c1 = Number(c1);
+console.log(c1, ' - type is:', typeof c1);
+
+a1 = Date().toString();
+console.log(a1, ' - type is:', typeof a1);
+
+d = new Date();
+console.log(
+  d.getDate(),
+  d.getFullYear(),
+  d.getMonth(),
+  d.getDate(),
+  d.getHours(),
+  d.getMinutes(),
+  d.getSeconds(),
+  d.getMilliseconds(),
+  d.getTime(),
+  d.getDay(),
+  Date.now()
+);
+
+// automatic type conversion
+
+console.log(5 + null, '5' + null, '5' + 3, '5' - 3, '5' * 3);
+//5 5null 53 2 15
