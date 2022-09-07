@@ -769,3 +769,70 @@ console.log(
 
 console.log(5 + null, '5' + null, '5' + 3, '5' - 3, '5' * 3);
 //5 5null 53 2 15
+
+console.log(
+  '________________________________\n' +
+    'control flow' +
+    '------if statement -----'
+);
+
+a = (Math.random() * 100).toFixed(0);
+c = parseInt(Math.random() * 100);
+console.log(`Random number a is: ${a}\n`, `Random number b is: ${c}`);
+if (a > c) {
+  console.log('a > c');
+} else if (a < c) {
+  console.log('a < c');
+} else {
+  console.log("It's really strange, but a = c");
+}
+
+
+//season of year definer
+const FIRST = 1;
+const LAST = 12;
+
+function randomGenBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const month = randomGenBetween(FIRST, LAST);
+console.log(`The month number is: ${month}`);
+
+if (month == 12 || month == 1 || month == 2) {
+  console.log('Winter');
+} else if (month > 2 && month < 6) {
+  console.log('Spring');
+} else if (month >= 6 && month < 9) {
+  console.log('Summer');
+} else {
+  console.log('Autumn');
+}
+
+
+
+console.log(
+  '________________________________\n' +
+    'control flow' +
+    '------ternary operator -----'
+);
+
+// a = c = 1; //uncomment for checking a == c
+a = Math.floor(Math.random()*10);
+c = Math.ceil(Math.random()*10);
+
+let result = (a < c) ? 'a < c' : ((a == c) ? 'a = c' : 'a > c'); 
+console.log(`a = ${a}, c = ${c}, result is: ${result}`);
+
+
+//haircut master name: even days - Kat, odd days - Mary
+const TEXT1 = 'Hair master name is ';
+const MASTER_EVEN = 'Kat';
+const MASTER_ODD = 'Mary';
+
+d = new Date();
+d = d.getDate()
+console.log(d);
+
+const hairMasterName = (d % 2 == 0) ? `${TEXT1}${MASTER_EVEN}` : `${TEXT1}${MASTER_ODD}`;
+console.log(hairMasterName);
