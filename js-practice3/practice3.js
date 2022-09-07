@@ -787,7 +787,6 @@ if (a > c) {
   console.log("It's really strange, but a = c");
 }
 
-
 //season of year definer
 const FIRST = 1;
 const LAST = 12;
@@ -809,8 +808,6 @@ if (month == 12 || month == 1 || month == 2) {
   console.log('Autumn');
 }
 
-
-
 console.log(
   '________________________________\n' +
     'control flow' +
@@ -818,12 +815,11 @@ console.log(
 );
 
 // a = c = 1; //uncomment for checking a == c
-a = Math.floor(Math.random()*10);
-c = Math.ceil(Math.random()*10);
+a = Math.floor(Math.random() * 10);
+c = Math.ceil(Math.random() * 10);
 
-let result = (a < c) ? 'a < c' : ((a == c) ? 'a = c' : 'a > c'); 
+let result = a < c ? 'a < c' : a == c ? 'a = c' : 'a > c';
 console.log(`a = ${a}, c = ${c}, result is: ${result}`);
-
 
 //haircut master name: even days - Kat, odd days - Mary
 const TEXT1 = 'Hair master name is ';
@@ -831,8 +827,47 @@ const MASTER_EVEN = 'Kat';
 const MASTER_ODD = 'Mary';
 
 d = new Date();
-d = d.getDate()
+d = d.getDate();
 console.log(d);
 
-const hairMasterName = (d % 2 == 0) ? `${TEXT1}${MASTER_EVEN}` : `${TEXT1}${MASTER_ODD}`;
+const hairMasterName =
+  d % 2 == 0 ? `${TEXT1}${MASTER_EVEN}` : `${TEXT1}${MASTER_ODD}`;
 console.log(hairMasterName);
+
+console.log(
+  '________________________________\n' +
+    'control flow' +
+    '------switch operator -----'
+);
+
+const FIRST_MONTH = 1;
+const LAST_MONTH = 12;
+a = Math.floor(Math.random() * (LAST_MONTH - FIRST_MONTH + 1) + FIRST_MONTH);
+console.log(`Random month is ${a}`)
+
+
+switch (a) {
+  case 12:
+  case 1:
+  case 2:
+    console.log('Winter');
+    break;
+  case 3:
+  case 4:
+  case 5:
+    console.log('Spring');
+    break;
+  case 6:
+  case 7:
+  case 8:
+    console.log('Summer');
+    break;
+  case 9:
+  case 10:
+  case 11:
+    console.log('Autumn');
+    break;
+  default:
+    console.log("This month doesn't exist");
+    break;
+}
