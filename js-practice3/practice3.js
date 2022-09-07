@@ -694,8 +694,7 @@ console.log('1' || null || 8); //'1'
 console.log(0 || NaN || undefined); //undefined
 
 a = !false;
-a1 = !3,
-c = !0;
+(a1 = !3), (c = !0);
 c1 = !NaN;
 console.log('Output of !false, !3, !0, !NaN are:', a, a1, c, c1);
 
@@ -717,8 +716,123 @@ console.log(
   !!null,
   Boolean(null),
   !!undefined,
-    !!NaN,
-    !!'',
-    !!false
+  !!NaN,
+  !!'',
+  !!false
 ); //all false
 
+console.log(
+  '________________________________\n' + 'operator precedence' + '------ -----'
+);
+
+a = 3;
+a1 = 9;
+c = 1;
+c1 = ++a + a1++ + c--; //4 + 9 + 1
+console.log(c1); //14
+
+console.log(
+  '________________________________\n' + 'type conversion' + '------ -----'
+);
+
+a = 876;
+c = 893;
+a = String(a);
+c = c.toString();
+console.log(a, ' - type is:', typeof a);
+console.log(c, ' - type is:', typeof c);
+
+c1 = new Date();
+console.log(c1, ' - type is:', typeof c1);
+c1 = Number(c1);
+console.log(c1, ' - type is:', typeof c1);
+
+a1 = Date().toString();
+console.log(a1, ' - type is:', typeof a1);
+
+d = new Date();
+console.log(
+  d.getDate(),
+  d.getFullYear(),
+  d.getMonth(),
+  d.getDate(),
+  d.getHours(),
+  d.getMinutes(),
+  d.getSeconds(),
+  d.getMilliseconds(),
+  d.getTime(),
+  d.getDay(),
+  Date.now()
+);
+
+// automatic type conversion
+
+console.log(5 + null, '5' + null, '5' + 3, '5' - 3, '5' * 3);
+//5 5null 53 2 15
+
+console.log(
+  '________________________________\n' +
+    'control flow' +
+    '------if statement -----'
+);
+
+a = (Math.random() * 100).toFixed(0);
+c = parseInt(Math.random() * 100);
+console.log(`Random number a is: ${a}\n`, `Random number b is: ${c}`);
+if (a > c) {
+  console.log('a > c');
+} else if (a < c) {
+  console.log('a < c');
+} else {
+  console.log("It's really strange, but a = c");
+}
+
+
+//season of year definer
+const FIRST = 1;
+const LAST = 12;
+
+function randomGenBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const month = randomGenBetween(FIRST, LAST);
+console.log(`The month number is: ${month}`);
+
+if (month == 12 || month == 1 || month == 2) {
+  console.log('Winter');
+} else if (month > 2 && month < 6) {
+  console.log('Spring');
+} else if (month >= 6 && month < 9) {
+  console.log('Summer');
+} else {
+  console.log('Autumn');
+}
+
+
+
+console.log(
+  '________________________________\n' +
+    'control flow' +
+    '------ternary operator -----'
+);
+
+// a = c = 1; //uncomment for checking a == c
+a = Math.floor(Math.random()*10);
+c = Math.ceil(Math.random()*10);
+
+let result = (a < c) ? 'a < c' : ((a == c) ? 'a = c' : 'a > c'); 
+console.log(`a = ${a}, c = ${c}, result is: ${result}`);
+
+
+//haircut master name: even days - Kat, odd days - Mary
+const TEXT1 = 'Hair master name is ';
+const MASTER_EVEN = 'Kat';
+const MASTER_ODD = 'Mary';
+
+d = new Date();
+d = d.getDate()
+console.log(d);
+
+const hairMasterName = (d % 2 == 0) ? `${TEXT1}${MASTER_EVEN}` : `${TEXT1}${MASTER_ODD}`;
+console.log(hairMasterName);
