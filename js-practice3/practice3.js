@@ -843,8 +843,7 @@ console.log(
 const FIRST_MONTH = 1;
 const LAST_MONTH = 12;
 a = Math.floor(Math.random() * (LAST_MONTH - FIRST_MONTH + 1) + FIRST_MONTH);
-console.log(`Random month is ${a}`)
-
+console.log(`Random month is ${a}`);
 
 switch (a) {
   case 12:
@@ -871,3 +870,98 @@ switch (a) {
     console.log("This month doesn't exist");
     break;
 }
+
+console.log(
+  '________________________________\n' +
+    '-------------' +
+    '------loops & iterations -----'
+);
+
+const INITIAL_I_VALUE = 0;
+const FOR_LOOP_STEP = 2;
+const arr2 = [2, 4, 6, 8, 10, 12, 14, 16];
+const arrTemp = [];
+for (let i = INITIAL_I_VALUE; i < arr2.length; i += FOR_LOOP_STEP) {
+  arrTemp.push(arr2[i] + 100);
+  console.log('Element value is:', arr2[i]);
+  console.log(`Element index is: ${i}`);
+  console.log('New arrTemp element is:', arrTemp[i]);
+}
+
+console.log('New arrayTemp = ', arrTemp);
+
+const arr3 = [];
+for (let i = 0; i < 10; i++) {
+  a = (Math.random() * 10).toFixed(4);
+  if (a < 5) {
+    arr3.push(a);
+  }
+}
+console.log(arr3);
+
+//while
+c1 = 0;
+while (c1 < 30) {
+  c1 += 3;
+  console.log(c1);
+} //3,6,9,12,15,18,21,24,27,30
+
+d = 30;
+while (d < 30) {
+  d += 3;
+  console.log(d);
+} // nothing
+
+//do while
+
+do {
+  e = Math.random() * 100;
+  console.log(e); //last output number always bigger then 87, because condition is checking after random calculation
+} while (e <= 87);
+console.log(e);
+
+console.log(
+  '________________________________\n' +
+    '-------------' +
+    '------loops & iterations, break & continue -----'
+);
+
+const arr4 = [];
+for (let i = 0; i < 20; i++) {
+  a = (Math.random() * 100).toFixed(0);
+  arr4.push(a);
+}
+console.log(arr4);
+
+const arr5 = [];
+for (let item of arr4) {
+  item = +item;
+  if (item < 20) {
+    continue; //go to the next step
+  } else if (item > 50 && item <= 80) {
+    item = item.toString();
+    arr5.push(item);
+  } else if (item > 80) {
+    console.log('break was applied');
+    break; //stop loop
+  } else {
+    arr5.push(item);
+  }
+}
+console.log(arr5);
+console.log(arr5.toString());
+
+
+
+//for in
+
+const obj4 = {fname: 'Sara', lname: 'Aras', age: 58};
+
+let txt = '';
+for (let unit in obj4) {
+  console.log(`Current obj4 key in this iteration represented as 'unit' is: ${unit}`);
+  console.log('Current obj4 value in this iteration corresponded with current key is: ', obj4[unit]);
+  txt += obj4[unit] + ' ';
+}
+console.log(`All abject values concatenated in string are: ${txt}`);
+
