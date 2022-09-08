@@ -60,20 +60,20 @@ testFunc1(5, 5);
 
 console.log('3---------set timeout & callback');
 
-const main = () => {
-  callback();
-};
+// const main = () => {
+//   callback();
+// };
 
-const callback = () => {
-  console.log('Success - callback');
-  setTimeout(callback1, 3000);
-};
+// const callback = () => {
+//   console.log('Success - callback');
+//   setTimeout(callback1, 3000);
+// };
 
-const callback1 = () => {
-  console.log('Success - callback1');
-};
+// const callback1 = () => {
+//   console.log('Success - callback1');
+// };
 
-setTimeout(main, 3000);
+// setTimeout(main, 3000);
 
 //A nested function that prints a stack trace error to the console
 
@@ -598,13 +598,13 @@ console.log(e);
 
 //increment & decrement
 
-let a1, c1, d1, e1;
+let num2, c1, d1, e1;
 
 a = c = d = e = 0;
 console.log(a, c, d, e);
 
-a1 = a++;
-console.log(a1); //0
+num2 = a++;
+console.log(num2); //0
 c1 = ++c;
 console.log(c1); //1
 d1 = d--;
@@ -618,15 +618,15 @@ console.log(
     '------ -----'
 );
 
-a = a1 = e = e1 = 0;
+a = num2 = e = e1 = 0;
 c = c1 = 5;
 d = d1 = 20;
 
 a += 10;
 console.log(a);
 
-a1 -= 5;
-console.log(a1);
+num2 -= 5;
+console.log(num2);
 
 c *= 5;
 console.log(c);
@@ -643,39 +643,39 @@ console.log(
     '------ -----'
 );
 
-a = 44;
-console.log('44' == a); //true
+// a = 44;
+// console.log('44' == a); //true
 
-console.log('23' != a); //true
+// console.log('23' != a); //true
 
-console.log('44' === a); //false
+// console.log('44' === a); //false
 
-console.log('44' !== a); //true
+// console.log('44' !== a); //true
 
-// eslint-disable-next-line no-undef
-b = undefined;
-// eslint-disable-next-line no-undef
-console.log(b == null); //true
-// eslint-disable-next-line no-undef
-console.log(b === null); //false
+// // eslint-disable-next-line no-undef
+// b = undefined;
+// // eslint-disable-next-line no-undef
+// console.log(b == null); //true
+// // eslint-disable-next-line no-undef
+// console.log(b === null); //false
 
-// eslint-disable-next-line no-undef
-b = null;
-// eslint-disable-next-line no-undef
-console.log(b == null); //true
-// eslint-disable-next-line no-undef
-console.log(b === null); //true
+// // eslint-disable-next-line no-undef
+// b = null;
+// // eslint-disable-next-line no-undef
+// console.log(b == null); //true
+// // eslint-disable-next-line no-undef
+// console.log(b === null); //true
 
-//NaN !== NaN //true
-//NaN != NaN //true
+// //NaN !== NaN //true
+// //NaN != NaN //true
 
-//setTimeout inside a function
-const funcSetTimeout = () => {
-  console.log('Before timeout');
-  setTimeout(() => console.log('After 1500 timeout'), 1500);
-  setTimeout(() => console.log('After 3000 timeout'), 3000);
-};
-funcSetTimeout();
+// //setTimeout inside a function
+// const funcSetTimeout = () => {
+//   console.log('Before timeout');
+//   setTimeout(() => console.log('After 1500 timeout'), 1500);
+//   setTimeout(() => console.log('After 3000 timeout'), 3000);
+// };
+// funcSetTimeout();
 
 console.log(
   '________________________________\n' +
@@ -694,9 +694,9 @@ console.log('1' || null || 8); //'1'
 console.log(0 || NaN || undefined); //undefined
 
 a = !false;
-(a1 = !3), (c = !0);
+(num2 = !3), (c = !0);
 c1 = !NaN;
-console.log('Output of !false, !3, !0, !NaN are:', a, a1, c, c1);
+console.log('Output of !false, !3, !0, !NaN are:', a, num2, c, c1);
 
 // !! converting to boolean
 
@@ -726,9 +726,9 @@ console.log(
 );
 
 a = 3;
-a1 = 9;
+num2 = 9;
 c = 1;
-c1 = ++a + a1++ + c--; //4 + 9 + 1
+c1 = ++a + num2++ + c--; //4 + 9 + 1
 console.log(c1); //14
 
 console.log(
@@ -747,8 +747,8 @@ console.log(c1, ' - type is:', typeof c1);
 c1 = Number(c1);
 console.log(c1, ' - type is:', typeof c1);
 
-a1 = Date().toString();
-console.log(a1, ' - type is:', typeof a1);
+num2 = Date().toString();
+console.log(num2, ' - type is:', typeof num2);
 
 d = new Date();
 console.log(
@@ -951,17 +951,79 @@ for (let item of arr4) {
 console.log(arr5);
 console.log(arr5.toString());
 
-
-
 //for in
 
-const obj4 = {fname: 'Sara', lname: 'Aras', age: 58};
+const obj4 = { fname: 'Sara', lname: 'Aras', age: 58 };
 
 let txt = '';
 for (let unit in obj4) {
-  console.log(`Current obj4 key in this iteration represented as 'unit' is: ${unit}`);
-  console.log('Current obj4 value in this iteration corresponded with current key is: ', obj4[unit]);
+  console.log(
+    `Current obj4 key in this iteration represented as 'unit' is: ${unit}`
+  );
+  console.log(
+    'Current obj4 value in this iteration corresponded with current key is: ',
+    obj4[unit]
+  );
   txt += obj4[unit] + ' ';
 }
 console.log(`All abject values concatenated in string are: ${txt}`);
 
+console.log(
+  '________________________________\n' +
+    '-------------' +
+    '------ functions-----'
+);
+
+//syntax for self-calling function
+
+(function (a, c) {
+  c1 = a + c;
+  console.log(c1);
+})(Math.random().toFixed(2) * 100, Math.random().toFixed(2) * 100);
+
+//print function content
+const foo = function () {
+  return 'Hello world!';
+};
+console.log(foo());
+console.log(foo);
+
+//callback
+
+const makeAutoRepair = (startRepairArg, autoIsReady) => {
+  console.log(`We started to repair car: ${startRepair}`);
+  // driverEntertainmentCB();
+  setTimeout(autoIsReady, 5000);
+};
+
+const watchingMovie = () => {
+  console.log("Car's owner watching movie.");
+};
+
+const autoIsReady = () => console.log('5 sec left. Auto is ready!');
+
+makeAutoRepair('Nissan', autoIsReady);
+watchingMovie();
+
+////////////////
+
+// let num1 = 500;
+// let numSum;
+// const calculation = (a, cb) => {
+//   num2 = Math.random() * 1000;
+//   console.log(
+//     `'num1' is a static and equal: ${num1}\n'num2' calculated randomly just now and equal: ${num2}\nThe formula is: 'numSum' = 'num1' + 'num2'`
+//   );
+//   console.log(`Beginning calculation with ${num1} & ${num2}`);
+//   numSum = Math.ceil(num1 + num2);
+//   setTimeout(cb, 3000);
+// };
+
+// const calcResult = () =>
+//   console.log(`Calculation result is: ${num1} + ${num2} = ${numSum}`);
+
+// const calcProcess = () =>
+//   console.log('Please wait 5 sec. Calculation in process...');
+
+// calculation(num1, calcResult);
+// calcProcess();

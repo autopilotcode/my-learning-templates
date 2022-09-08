@@ -429,5 +429,12 @@ argObject(1,2,3);
 
 
 
+function function1(a,b) {
+    return c = a + b;
+} 
+
+console.log(function1(5,5,7,7,99,));  //only 2 first arguments will be processed
+
+
 
 
