@@ -60,20 +60,20 @@ testFunc1(5, 5);
 
 console.log('3---------set timeout & callback');
 
-const main = () => {
-  callback();
-};
+// const main = () => {
+//   callback();
+// };
 
-const callback = () => {
-  console.log('Success - callback');
-  setTimeout(callback1, 3000);
-};
+// const callback = () => {
+//   console.log('Success - callback');
+//   setTimeout(callback1, 3000);
+// };
 
-const callback1 = () => {
-  console.log('Success - callback1');
-};
+// const callback1 = () => {
+//   console.log('Success - callback1');
+// };
 
-setTimeout(main, 3000);
+// setTimeout(main, 3000);
 
 //A nested function that prints a stack trace error to the console
 
@@ -598,13 +598,13 @@ console.log(e);
 
 //increment & decrement
 
-let a1, c1, d1, e1;
+let num2, c1, d1, e1;
 
 a = c = d = e = 0;
 console.log(a, c, d, e);
 
-a1 = a++;
-console.log(a1); //0
+num2 = a++;
+console.log(num2); //0
 c1 = ++c;
 console.log(c1); //1
 d1 = d--;
@@ -618,15 +618,15 @@ console.log(
     '------ -----'
 );
 
-a = a1 = e = e1 = 0;
+a = num2 = e = e1 = 0;
 c = c1 = 5;
 d = d1 = 20;
 
 a += 10;
 console.log(a);
 
-a1 -= 5;
-console.log(a1);
+num2 -= 5;
+console.log(num2);
 
 c *= 5;
 console.log(c);
@@ -643,39 +643,39 @@ console.log(
     '------ -----'
 );
 
-a = 44;
-console.log('44' == a); //true
+// a = 44;
+// console.log('44' == a); //true
 
-console.log('23' != a); //true
+// console.log('23' != a); //true
 
-console.log('44' === a); //false
+// console.log('44' === a); //false
 
-console.log('44' !== a); //true
+// console.log('44' !== a); //true
 
-// eslint-disable-next-line no-undef
-b = undefined;
-// eslint-disable-next-line no-undef
-console.log(b == null); //true
-// eslint-disable-next-line no-undef
-console.log(b === null); //false
+// // eslint-disable-next-line no-undef
+// b = undefined;
+// // eslint-disable-next-line no-undef
+// console.log(b == null); //true
+// // eslint-disable-next-line no-undef
+// console.log(b === null); //false
 
-// eslint-disable-next-line no-undef
-b = null;
-// eslint-disable-next-line no-undef
-console.log(b == null); //true
-// eslint-disable-next-line no-undef
-console.log(b === null); //true
+// // eslint-disable-next-line no-undef
+// b = null;
+// // eslint-disable-next-line no-undef
+// console.log(b == null); //true
+// // eslint-disable-next-line no-undef
+// console.log(b === null); //true
 
-//NaN !== NaN //true
-//NaN != NaN //true
+// //NaN !== NaN //true
+// //NaN != NaN //true
 
-//setTimeout inside a function
-const funcSetTimeout = () => {
-  console.log('Before timeout');
-  setTimeout(() => console.log('After 1500 timeout'), 1500);
-  setTimeout(() => console.log('After 3000 timeout'), 3000);
-};
-funcSetTimeout();
+// //setTimeout inside a function
+// const funcSetTimeout = () => {
+//   console.log('Before timeout');
+//   setTimeout(() => console.log('After 1500 timeout'), 1500);
+//   setTimeout(() => console.log('After 3000 timeout'), 3000);
+// };
+// funcSetTimeout();
 
 console.log(
   '________________________________\n' +
@@ -694,9 +694,9 @@ console.log('1' || null || 8); //'1'
 console.log(0 || NaN || undefined); //undefined
 
 a = !false;
-(a1 = !3), (c = !0);
+(num2 = !3), (c = !0);
 c1 = !NaN;
-console.log('Output of !false, !3, !0, !NaN are:', a, a1, c, c1);
+console.log('Output of !false, !3, !0, !NaN are:', a, num2, c, c1);
 
 // !! converting to boolean
 
@@ -726,9 +726,9 @@ console.log(
 );
 
 a = 3;
-a1 = 9;
+num2 = 9;
 c = 1;
-c1 = ++a + a1++ + c--; //4 + 9 + 1
+c1 = ++a + num2++ + c--; //4 + 9 + 1
 console.log(c1); //14
 
 console.log(
@@ -747,8 +747,8 @@ console.log(c1, ' - type is:', typeof c1);
 c1 = Number(c1);
 console.log(c1, ' - type is:', typeof c1);
 
-a1 = Date().toString();
-console.log(a1, ' - type is:', typeof a1);
+num2 = Date().toString();
+console.log(num2, ' - type is:', typeof num2);
 
 d = new Date();
 console.log(
@@ -787,7 +787,6 @@ if (a > c) {
   console.log("It's really strange, but a = c");
 }
 
-
 //season of year definer
 const FIRST = 1;
 const LAST = 12;
@@ -809,8 +808,6 @@ if (month == 12 || month == 1 || month == 2) {
   console.log('Autumn');
 }
 
-
-
 console.log(
   '________________________________\n' +
     'control flow' +
@@ -818,12 +815,11 @@ console.log(
 );
 
 // a = c = 1; //uncomment for checking a == c
-a = Math.floor(Math.random()*10);
-c = Math.ceil(Math.random()*10);
+a = Math.floor(Math.random() * 10);
+c = Math.ceil(Math.random() * 10);
 
-let result = (a < c) ? 'a < c' : ((a == c) ? 'a = c' : 'a > c'); 
+let result = a < c ? 'a < c' : a == c ? 'a = c' : 'a > c';
 console.log(`a = ${a}, c = ${c}, result is: ${result}`);
-
 
 //haircut master name: even days - Kat, odd days - Mary
 const TEXT1 = 'Hair master name is ';
@@ -831,8 +827,203 @@ const MASTER_EVEN = 'Kat';
 const MASTER_ODD = 'Mary';
 
 d = new Date();
-d = d.getDate()
+d = d.getDate();
 console.log(d);
 
-const hairMasterName = (d % 2 == 0) ? `${TEXT1}${MASTER_EVEN}` : `${TEXT1}${MASTER_ODD}`;
+const hairMasterName =
+  d % 2 == 0 ? `${TEXT1}${MASTER_EVEN}` : `${TEXT1}${MASTER_ODD}`;
 console.log(hairMasterName);
+
+console.log(
+  '________________________________\n' +
+    'control flow' +
+    '------switch operator -----'
+);
+
+const FIRST_MONTH = 1;
+const LAST_MONTH = 12;
+a = Math.floor(Math.random() * (LAST_MONTH - FIRST_MONTH + 1) + FIRST_MONTH);
+console.log(`Random month is ${a}`);
+
+switch (a) {
+  case 12:
+  case 1:
+  case 2:
+    console.log('Winter');
+    break;
+  case 3:
+  case 4:
+  case 5:
+    console.log('Spring');
+    break;
+  case 6:
+  case 7:
+  case 8:
+    console.log('Summer');
+    break;
+  case 9:
+  case 10:
+  case 11:
+    console.log('Autumn');
+    break;
+  default:
+    console.log("This month doesn't exist");
+    break;
+}
+
+console.log(
+  '________________________________\n' +
+    '-------------' +
+    '------loops & iterations -----'
+);
+
+const INITIAL_I_VALUE = 0;
+const FOR_LOOP_STEP = 2;
+const arr2 = [2, 4, 6, 8, 10, 12, 14, 16];
+const arrTemp = [];
+for (let i = INITIAL_I_VALUE; i < arr2.length; i += FOR_LOOP_STEP) {
+  arrTemp.push(arr2[i] + 100);
+  console.log('Element value is:', arr2[i]);
+  console.log(`Element index is: ${i}`);
+  console.log('New arrTemp element is:', arrTemp[i]);
+}
+
+console.log('New arrayTemp = ', arrTemp);
+
+const arr3 = [];
+for (let i = 0; i < 10; i++) {
+  a = (Math.random() * 10).toFixed(4);
+  if (a < 5) {
+    arr3.push(a);
+  }
+}
+console.log(arr3);
+
+//while
+c1 = 0;
+while (c1 < 30) {
+  c1 += 3;
+  console.log(c1);
+} //3,6,9,12,15,18,21,24,27,30
+
+d = 30;
+while (d < 30) {
+  d += 3;
+  console.log(d);
+} // nothing
+
+//do while
+
+do {
+  e = Math.random() * 100;
+  console.log(e); //last output number always bigger then 87, because condition is checking after random calculation
+} while (e <= 87);
+console.log(e);
+
+console.log(
+  '________________________________\n' +
+    '-------------' +
+    '------loops & iterations, break & continue -----'
+);
+
+const arr4 = [];
+for (let i = 0; i < 20; i++) {
+  a = (Math.random() * 100).toFixed(0);
+  arr4.push(a);
+}
+console.log(arr4);
+
+const arr5 = [];
+for (let item of arr4) {
+  item = +item;
+  if (item < 20) {
+    continue; //go to the next step
+  } else if (item > 50 && item <= 80) {
+    item = item.toString();
+    arr5.push(item);
+  } else if (item > 80) {
+    console.log('break was applied');
+    break; //stop loop
+  } else {
+    arr5.push(item);
+  }
+}
+console.log(arr5);
+console.log(arr5.toString());
+
+//for in
+
+const obj4 = { fname: 'Sara', lname: 'Aras', age: 58 };
+
+let txt = '';
+for (let unit in obj4) {
+  console.log(
+    `Current obj4 key in this iteration represented as 'unit' is: ${unit}`
+  );
+  console.log(
+    'Current obj4 value in this iteration corresponded with current key is: ',
+    obj4[unit]
+  );
+  txt += obj4[unit] + ' ';
+}
+console.log(`All abject values concatenated in string are: ${txt}`);
+
+console.log(
+  '________________________________\n' +
+    '-------------' +
+    '------ functions-----'
+);
+
+//syntax for self-calling function
+
+(function (a, c) {
+  c1 = a + c;
+  console.log(c1);
+})(Math.random().toFixed(2) * 100, Math.random().toFixed(2) * 100);
+
+//print function content
+const foo = function () {
+  return 'Hello world!';
+};
+console.log(foo());
+console.log(foo);
+
+//callback
+
+const makeAutoRepair = (startRepairArg, autoIsReady) => {
+  console.log(`We started to repair car: ${startRepair}`);
+  // driverEntertainmentCB();
+  setTimeout(autoIsReady, 5000);
+};
+
+const watchingMovie = () => {
+  console.log("Car's owner watching movie.");
+};
+
+const autoIsReady = () => console.log('5 sec left. Auto is ready!');
+
+makeAutoRepair('Nissan', autoIsReady);
+watchingMovie();
+
+////////////////
+
+// let num1 = 500;
+// let numSum;
+// const calculation = (a, cb) => {
+//   num2 = Math.random() * 1000;
+//   console.log(
+//     `'num1' is a static and equal: ${num1}\n'num2' calculated randomly just now and equal: ${num2}\nThe formula is: 'numSum' = 'num1' + 'num2'`
+//   );
+//   console.log(`Beginning calculation with ${num1} & ${num2}`);
+//   numSum = Math.ceil(num1 + num2);
+//   setTimeout(cb, 3000);
+// };
+
+// const calcResult = () =>
+//   console.log(`Calculation result is: ${num1} + ${num2} = ${numSum}`);
+
+// const calcProcess = () =>
+//   console.log('Please wait 5 sec. Calculation in process...');
+
+// calculation(num1, calcResult);
+// calcProcess();
